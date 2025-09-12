@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://3siw6cp2pi75"]
 
 [ext_resource type="Script" uid="uid://dutf6wbgj3306" path="res://fishing/fishing_asset/fish_scene/kail_pancing.gd" id="1_t06cb"]
-[ext_resource type="Texture2D" uid="uid://u6xajl11ygsh" path="res://fishing/fishing_asset/sprite/Idle.png" id="2_xj2du"]
+[ext_resource type="Texture2D" uid="uid://n77qqx507bub" path="res://fishing/fishing_asset/sprite/Idle.png" id="2_xj2du"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7pp20"]
 atlas = ExtResource("2_xj2du")
