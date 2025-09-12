@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://r8cyjg4kqy6w"]
+
+[ext_resource type="Texture2D" uid="uid://cp62c53abyplg" path="res://village/village_asset/Heroine_Idle.png" id="1_t060s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b8cf"]
+atlas = ExtResource("1_t060s")
+region = Rect2(0, 0, 480, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i6jg"]
+atlas = ExtResource("1_t060s")
+region = Rect2(480, 0, 480, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44oal"]
+atlas = ExtResource("1_t060s")
+region = Rect2(0, 480, 480, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dku20"]
+atlas = ExtResource("1_t060s")
+region = Rect2(480, 480, 480, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_up286"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b8cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i6jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44oal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dku20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b8cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i6jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dku20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b8cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i6jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dku20")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="sister" type="AnimatedSprite2D"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_up286")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.696302
