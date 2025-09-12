@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://borfx4e7ved6t"]
+[gd_scene load_steps=14 format=4 uid="uid://borfx4e7ved6t"]
 
 [ext_resource type="Texture2D" uid="uid://b0fuxyti6etnp" path="res://village/village_asset/walls_floor.png" id="1_1vmyk"]
-[ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_ut2hd"]
 [ext_resource type="Texture2D" uid="uid://dto733cahjgld" path="res://village/village_asset/Interior.png" id="2_y2v47"]
 [ext_resource type="PackedScene" uid="uid://r8cyjg4kqy6w" path="res://village/village_scene/sister.tscn" id="4_y2v47"]
 
@@ -1415,8 +1414,6 @@ scale = Vector2(6, 6)
 tile_map_data = PackedByteArray("AAABAAgAAAAAAA0AAAABAAkAAAAAAA4AAAACAAgAAAABAA0AAAACAAkAAAABAA4AAAA=")
 tile_set = SubResource("TileSet_73uv3")
 
-[node name="character" parent="." instance=ExtResource("2_ut2hd")]
-position = Vector2(330, 270)
-
 [node name="sister" parent="." instance=ExtResource("4_y2v47")]
 position = Vector2(88, 836)
+frame_progress = 0.277571

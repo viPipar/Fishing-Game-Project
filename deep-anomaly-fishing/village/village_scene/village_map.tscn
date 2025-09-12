@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://co3dyoynb6n4"]
+[gd_scene load_steps=26 format=4 uid="uid://co3dyoynb6n4"]
 
 [ext_resource type="Texture2D" uid="uid://ht3brtfvoc6a" path="res://village/village_asset/Water_and_Snow_1.png" id="1_emm1b"]
 [ext_resource type="Texture2D" uid="uid://b6je4sw65p0er" path="res://village/village_asset/Lake_and_Bridge.png" id="2_3vqi5"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://q6dag7g028co" path="res://village/village_asset/TX FX Torch Flame.png" id="9_kk7fx"]
 [ext_resource type="Texture2D" uid="uid://bj5nkkqs6mnea" path="res://village/village_asset/pohon.png" id="10_3vqi5"]
 [ext_resource type="Texture2D" uid="uid://cmvrr0f88mk0b" path="res://village/village_asset/TX Village Props.png" id="10_ubpq8"]
-[ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="11_3vqi5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imlwd"]
 texture = ExtResource("1_emm1b")
@@ -1012,12 +1011,6 @@ y_sort_enabled = true
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAIAPH/CAAWAAMAAAACAAEACQAAAAgAAAD8//3/CQAAAAgAAAAJAAEACQAAAAgAAAAHAPz/CQAAAAgAAAAGAPH/CQAAAAgAAAAKAPH/CQAAAAgAAAD5/wEACQAAAAgAAAD0//3/CQAAAAgAAADs/wEACQAAAAgAAADh/wEACQAAAAgAAADq//j/CQAAAAgAAADl//T/CQAAAAgAAADc//T/CQAAAAgAAADU//P/CQAAAAgAAADR//r/CQAAAAgAAADk//v/CQAAAAgAAADj//v/CQAAAAgAAADg//f/CQAAAAgAAADq//n/CQAAAAgAAADO//H/CQAAAAgAAADE//f/CQAAAAgAAADq//L/CQAAAAgAAADV//j/CQAJAAgAAADJ//X/CQAJAAgAAADH//H/CQAJAAgAAADa//L/CQAJAAgAAADY/wEACQAJAAgAAADm//n/CQAJAAgAAADm//j/CQAJAAgAAADh//H/CQAJAAgAAADm/wEADAAAAAAAAADE/wAACQAJAAgAAADH//r/CQAJAAgAAADD//L/CQAJAAgAAADF//P/CQAJAAgAAADx//7/CQAJAAgAAADz/wEACQAJAAgAAAD9/wAACQAJAAgAAAD9/wEACQAJAAgAAAAEAP3/CQAJAAgAAAAGAAAACQAJAAgAAAAIAPf/CAASAAQAAAAGAPf/CAAOAAUAAAAKAPf/CAAOAAUAAAAIAPX/CAAQAAQAAAAGAPX/CAAUAAQAAAAKAPX/CAAUAAQAAAAIAPP/CAAUAAQAAAAGAPn/CAASAAQAAAAIAPn/CAAQAAQAAAAKAPn/CAASAAQAAAAJAPH/CAAXAAUAAAAHAPH/CAAVAAUAAAAJAPX/CAAeAAAAAAAHAPf/CAAeAAAAAAAJAPn/CAAeAAAAAAAHAPP/CAAeAAAAAAAIAPb/AwAAAAIAAAAIAPL/AwAAAAIAAAAKAPP/AwAAAAIAAAAGAPT/AwAAAAIAAAAHAPj/AwAAAAIAAAAKAPj/AwAAAAIAAAAHAPr/BAAAAAIAAAAKAPr/BAAAAAIAAAAKAPb/BAAAAAIAAAAGAPb/BAAAAAIAAAAJAPT/BAAAAAIAAADH//v/DAAAAAAAAADM//f/CQAAAAgAAADL/wEACQAAAAgAAADM/wEACQAAAAgAAADT//v/DAAAAAAAAADf//v/DAAAAAAAAADa//n/CQAJAAgAAADN/wEADAAAAAAAAADa/wEADAAAAAAAAADB/wEADAAAAAAAAADb/wIAAgABAAEAAADZ/wEABAAAAAEAAADc/wEABAAAAAEAAADZ/wIABAAAAAEAAADc/wMABAAAAAEAAADa/wMABAAAAAEAAADZ/wMAAgABAAEAAADa/wIAAwABAAEAAADc/wIAAwABAAEAAADb/wEAAwABAAEAAADX/wIAAwABAAEAAADY/wMAAwABAAEAAADe/wEAAwABAAEAAADe/wMAAwABAAEAAADd/wMAAgABAAEAAADe/wIAAgABAAEAAADe/wAAAgABAAEAAADX////AgABAAEAAADc//7/AgABAAEAAADe//7/BAABAAEAAADZ//3/AgABAAEAAADX//3/AgABAAEAAADV////AgABAAEAAADe//3/AgABAAEAAADf/wAAAgABAAEAAADW/wIAAgABAAEAAADX//7/AwABAAEAAADW/wAAAwABAAEAAADe////AwABAAEAAADf/wIAAwABAAEAAADc//3/AwABAAEAAADY//3/BAABAAEAAADW////BAABAAEAAADf////BAABAAEAAAA=")
 tile_set = SubResource("TileSet_rs3x2")
-
-[node name="character" parent="." instance=ExtResource("11_3vqi5")]
-z_index = 1
-position = Vector2(1111, -547)
-collision_layer = 3
-collision_mask = 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmb2gsyra3482"]
+
+[ext_resource type="PackedScene" uid="uid://borfx4e7ved6t" path="res://village/village_scene/home.tscn" id="1_q7hwh"]
+[ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_jxeqa"]
+
+[node name="stage_one" type="Node2D"]
+y_sort_enabled = true
+
+[node name="home" parent="." instance=ExtResource("1_q7hwh")]
+
+[node name="character" parent="." instance=ExtResource("2_jxeqa")]
+position = Vector2(677, 380)
