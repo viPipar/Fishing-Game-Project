@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://chqn7a0cg5cu7"]
+
+[ext_resource type="Script" uid="uid://2b4vapwc1oc0" path="res://fishing/ikan_angler.gd" id="1_2yn8m"]
+[ext_resource type="Texture2D" uid="uid://cr6wgmbxxbvbq" path="res://fishing/fishing_asset/sprite/angler/Walk.png" id="2_3kcqo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e38mq"]
+atlas = ExtResource("2_3kcqo")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbas7"]
+atlas = ExtResource("2_3kcqo")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjau1"]
+atlas = ExtResource("2_3kcqo")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp5rw"]
+atlas = ExtResource("2_3kcqo")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1fec4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e38mq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbas7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjau1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp5rw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt4to"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yn8m"]
+size = Vector2(11, 11.3333)
+
+[node name="ikan_angler" type="CharacterBody2D"]
+position = Vector2(-17, -18)
+scale = Vector2(3, 3)
+script = ExtResource("1_2yn8m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.66667, 0.333333)
+sprite_frames = SubResource("SpriteFrames_1fec4")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.125433
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 1.33333)
+shape = SubResource("RectangleShape2D_rt4to")
+
+[node name="MouthArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouthArea"]
+position = Vector2(6, 5.66667)
+shape = SubResource("RectangleShape2D_2yn8m")
