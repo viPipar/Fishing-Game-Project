@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck5fvd5c4miw3"]
+
+[ext_resource type="Script" uid="uid://dn2ur6q260fu" path="res://ikan_tuna.gd" id="1_jq7mi"]
+[ext_resource type="Texture2D" uid="uid://dins3kid4spnp" path="res://fishing/fishing_asset/sprite/tuna/tuna1.png" id="2_be6bn"]
+[ext_resource type="Texture2D" uid="uid://c4b61vqnq1d2t" path="res://fishing/fishing_asset/sprite/tuna/tuna2.png" id="3_ondhi"]
+[ext_resource type="Texture2D" uid="uid://ox5470kibc5g" path="res://fishing/fishing_asset/sprite/tuna/tuna3.png" id="4_cvlgq"]
+[ext_resource type="Texture2D" uid="uid://bwnxqa0aulk81" path="res://fishing/fishing_asset/sprite/tuna/tuna4.png" id="5_cd123"]
+[ext_resource type="Texture2D" uid="uid://lalb73nd1cxn" path="res://fishing/fishing_asset/sprite/tuna/tuna.png" id="6_orygr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wh0t"]
+size = Vector2(860, 232)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nj36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_be6bn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ondhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cvlgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cd123")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_orygr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1iy6b"]
+radius = 30.0666
+
+[node name="ikan_tuna" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_jq7mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34, -2)
+shape = SubResource("RectangleShape2D_5wh0t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3nj36")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.62049
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+position = Vector2(448, 20)
+shape = SubResource("CircleShape2D_1iy6b")

@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddhr6fh841trt"]
+
+[ext_resource type="Script" uid="uid://ckw0g5ux2lfpj" path="res://fishing/fishing_asset/fish_scene/ikan_nemo.gd" id="1_hb6qx"]
+[ext_resource type="Texture2D" uid="uid://cnmcatv1afvb6" path="res://fishing/fishing_asset/sprite/nemo/nemo.png" id="2_40ptp"]
+[ext_resource type="Texture2D" uid="uid://cncbvt0puj5g1" path="res://fishing/fishing_asset/sprite/nemo/nemo2.png" id="3_c6lnf"]
+[ext_resource type="Texture2D" uid="uid://ceepl5l5nu1b0" path="res://fishing/fishing_asset/sprite/nemo/nemo1.png" id="4_ollk3"]
+[ext_resource type="Texture2D" uid="uid://cgdo87eyjc1k4" path="res://fishing/fishing_asset/sprite/nemo/nemo3.png" id="5_4572j"]
+[ext_resource type="Texture2D" uid="uid://jnwja05ci0mp" path="res://fishing/fishing_asset/sprite/nemo/nemo4.png" id="6_osnak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6s76"]
+size = Vector2(2535, 1415)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kc6xl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_40ptp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c6lnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ollk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4572j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_osnak")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hb6qx"]
+radius = 230.217
+
+[node name="ikan_nemo" type="CharacterBody2D"]
+position = Vector2(1571, 873)
+scale = Vector2(-0.2, 0.2)
+collision_mask = 2
+script = ExtResource("1_hb6qx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-62.5, 32.5002)
+shape = SubResource("RectangleShape2D_u6s76")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.52588e-05, -1.99994)
+sprite_frames = SubResource("SpriteFrames_kc6xl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.496558
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(1.52588e-05, 1.99994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+position = Vector2(980, 10)
+shape = SubResource("CircleShape2D_hb6qx")
