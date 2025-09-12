@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnqu38l3pfda1"]
+[gd_scene load_steps=4 format=3 uid="uid://cnqu38l3pfda1"]
 
 [ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_2klss"]
+[ext_resource type="Script" uid="uid://bugxfti7kc0x6" path="res://village/village_scene/stage_scene/stage_two.gd" id="1_ultv0"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_ultv0"]
 
 [node name="stage_two" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_ultv0")
 
 [node name="village_map" parent="." instance=ExtResource("1_2klss")]
 
-[node name="character" parent="." instance=ExtResource("2_ultv0")]
+[node name="MC" parent="." instance=ExtResource("2_ultv0")]
 z_index = 1
+position = Vector2(-4621, 255)

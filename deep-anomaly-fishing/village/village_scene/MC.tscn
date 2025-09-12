@@ -240,7 +240,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d52cc"]
 
-[node name="character" type="CharacterBody2D"]
+[node name="MC" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_d52cc")
 speed = 400

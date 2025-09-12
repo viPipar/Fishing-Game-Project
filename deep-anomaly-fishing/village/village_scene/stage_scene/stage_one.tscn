@@ -1,12 +1,59 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmb2gsyra3482"]
+[gd_scene load_steps=5 format=3 uid="uid://cmb2gsyra3482"]
 
+[ext_resource type="Script" uid="uid://dh21187yfxup3" path="res://village/village_scene/stage_scene/stage_one.gd" id="1_jxeqa"]
 [ext_resource type="PackedScene" uid="uid://borfx4e7ved6t" path="res://village/village_scene/home.tscn" id="1_q7hwh"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_jxeqa"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7hwh"]
+
 [node name="stage_one" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_jxeqa")
 
 [node name="home" parent="." instance=ExtResource("1_q7hwh")]
 
-[node name="character" parent="." instance=ExtResource("2_jxeqa")]
-position = Vector2(677, 380)
+[node name="leave" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leave"]
+position = Vector2(1627, 1191)
+scale = Vector2(7.3796, 5.68736)
+shape = SubResource("RectangleShape2D_q7hwh")
+
+[node name="MC" parent="." instance=ExtResource("2_jxeqa")]
+position = Vector2(1615, 1002)
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="control"]
+visible = false
+layout_mode = 0
+offset_left = 1708.0
+offset_top = 1064.0
+offset_right = 1748.0
+offset_bottom = 1104.0
+scale = Vector2(4.45365, 4.09706)
+
+[node name="Label" type="Label" parent="control/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.961237, 0.973893)
+text = "Out ?"
+
+[node name="Button" type="Button" parent="control/Panel"]
+layout_mode = 0
+offset_left = 10.5531
+offset_top = 21.967
+offset_right = 45.5531
+offset_bottom = 52.9669
+scale = Vector2(0.502681, 0.436776)
+text = "Yes"
+
+[connection signal="body_entered" from="leave" to="." method="_on_leave_body_entered"]
+[connection signal="body_exited" from="leave" to="." method="_on_leave_body_exited"]
+[connection signal="pressed" from="control/Panel/Button" to="." method="_on_button_pressed"]

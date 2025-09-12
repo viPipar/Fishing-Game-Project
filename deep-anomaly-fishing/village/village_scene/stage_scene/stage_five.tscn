@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://7bse0jkjtrds"]
+
+[ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_p0h66"]
+[ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_s2bco"]
+
+[node name="stage_five" type="Node2D"]
+z_index = 1
+
+[node name="village_map" parent="." instance=ExtResource("1_p0h66")]
+
+[node name="MC" parent="." instance=ExtResource("2_s2bco")]
+z_index = 1
+position = Vector2(-4620, 268)
