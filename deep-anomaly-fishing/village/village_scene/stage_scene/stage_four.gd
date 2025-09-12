@@ -11,14 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_kuburan_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.name == "MC":
-		$blink_kuburan.visible=false
-		$area_kuburan.visible=false
-		$blink_patung.visible=true
-	else : pass
-
 func _on_area_patung_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "MC":
-		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_three.tscn")
+		#masukkan dialogue
+		$blink_patung.visible=false
+		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_five.tscn")
 	else : pass

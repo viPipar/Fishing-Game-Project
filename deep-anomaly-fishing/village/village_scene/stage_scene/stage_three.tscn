@@ -1,13 +1,80 @@
-[gd_scene load_steps=3 format=3 uid="uid://hf2mlpqbe6g4"]
+[gd_scene load_steps=8 format=3 uid="uid://hf2mlpqbe6g4"]
 
+[ext_resource type="Script" uid="uid://cmckwsr7snv5w" path="res://village/village_scene/stage_scene/stage_three.gd" id="1_htwbp"]
 [ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_myatq"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_htwbp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myatq"]
+size = Vector2(8.89248, 6.72065)
+
+[sub_resource type="Animation" id="Animation_4t57p"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.27451), Color(1, 1, 1, 0), Color(1, 1, 1, 0.27451)]
+}
+
+[sub_resource type="Animation" id="Animation_g303v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.27451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_anmvp"]
+_data = {
+&"RESET": SubResource("Animation_g303v"),
+&"blink": SubResource("Animation_4t57p")
+}
+
 [node name="stage_three" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_htwbp")
 
 [node name="village_map" parent="." instance=ExtResource("1_myatq")]
 
 [node name="MC" parent="." instance=ExtResource("2_htwbp")]
 z_index = 1
 position = Vector2(-4635, 381)
+
+[node name="area_kapal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_kapal"]
+position = Vector2(-722.5, 1343.5)
+scale = Vector2(15.8561, 11.7548)
+shape = SubResource("RectangleShape2D_myatq")
+
+[node name="blink_kapal" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.27451)
+z_index = 2
+offset_left = -842.0
+offset_top = 1264.0
+offset_right = -802.0
+offset_bottom = 1304.0
+scale = Vector2(5.86837, 3.8171)
+color = Color(1, 1, 0.772549, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="blink_kapal"]
+libraries = {
+&"": SubResource("AnimationLibrary_anmvp")
+}
+autoplay = "blink"
+
+[connection signal="body_shape_entered" from="area_kapal" to="." method="_on_area_kapal_body_shape_entered"]
