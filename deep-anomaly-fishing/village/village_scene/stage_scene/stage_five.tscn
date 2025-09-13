@@ -53,7 +53,7 @@ script = ExtResource("1_s2bco")
 position = Vector2(1625, 1208)
 
 [node name="area_kamar" type="Area2D" parent="."]
-position = Vector2(168, -62)
+position = Vector2(175, -62)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_kamar"]
 position = Vector2(210, 942)

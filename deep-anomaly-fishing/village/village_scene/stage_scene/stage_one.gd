@@ -1,17 +1,17 @@
 extends Node2D
 
 var medicine = 0
+var resource = preload("res://dialogue/stage_1.dialogue")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$area_kamar.monitoring = false
 	$area_keluar_kamar.monitoring = false
 	$leave.monitoring = false
-	
 	$control/Panel.visible=false
 	$control/medicine_panel.visible=false
-
-
+	
+	DialogueManager.show_dialogue_balloon(resource, "stage_1_1")
 #Buat obat
 func _on_area_medicine_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "MC":
@@ -37,18 +37,15 @@ func _on_area_kamar_body_shape_entered(body_rid: RID, body: Node2D, body_shape_i
 		$area_kamar.queue_free()
 		$blink_kamar.visible=false
 		medicine = 2
-		#percakapan
+		DialogueManager.show_dialogue_balloon(resource, "stage_1_2")
 	else : pass
 
 #exit kamar
 func _on_area_keluar_kamar_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if medicine == 2 :
 		$area_keluar_kamar.queue_free()
-		global_village.mcfreeze() #stop character
-		#masukin dialogue
-		await get_tree().create_timer(5.0).timeout #diapus kalau udah ada dialogue
+		DialogueManager.show_dialogue_balloon(resource, "stage_1_3")
 		$leave.monitoring = true
-		global_village.mcfreeze() #walk character
 	else : pass 
 
 

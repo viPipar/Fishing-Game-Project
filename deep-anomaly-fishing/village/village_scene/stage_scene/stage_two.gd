@@ -1,5 +1,6 @@
 extends Node2D
 
+var resource = preload("res://dialogue/stage_2.dialogue")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,11 +14,7 @@ func _on_area_kuburan_body_shape_entered(body_rid: RID, body: Node2D, body_shape
 	if body.name == "MC":
 		$area_kuburan.queue_free()
 		$blink_kuburan.visible=false
-		global_village.mcfreeze() #berhentiin player
-		
-		await get_tree().create_timer(3).timeout #ganti dengan dialog
-		
-		global_village.mcfreeze() #gerakin player
+		DialogueManager.show_dialogue_balloon(resource,"stage_2_1")
 		$blink_patung.visible=true
 		$area_patung.monitoring = true
 
@@ -27,11 +24,8 @@ func _on_area_patung_body_shape_entered(body_rid: RID, body: Node2D, body_shape_
 	if body.name == "MC":
 		$area_patung.queue_free()
 		$blink_patung.visible=false
-		global_village.mcfreeze() #berhentiin player
-		
-		await get_tree().create_timer(3).timeout #ganti dengan dialog
-		
-		global_village.mcfreeze() #gerakin player
+		DialogueManager.show_dialogue_balloon(resource,"stage_2_2")
+		await global_village.dialogue_finished
 		global_village.fishing_day = 1
 		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_three.tscn")
 	else : pass

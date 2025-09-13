@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var resource = preload("res://dialogue/stage_4.dialogue")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$area_rumah.monitoring = false
@@ -16,12 +16,8 @@ func _on_area_patung_body_shape_entered(body_rid: RID, body: Node2D, body_shape_
 	if body.name == "MC":
 		$blink_patung.visible=false
 		$area_patung.queue_free()
-		global_village.mcfreeze()
-		#masukkan dialogue
-		await get_tree().create_timer(5.0).timeout
-		
+		DialogueManager.show_dialogue_balloon(resource,"stage_4_1")
 		$area_rumah.monitoring = true
-		global_village.mcfreeze()
 	else : pass
 
 

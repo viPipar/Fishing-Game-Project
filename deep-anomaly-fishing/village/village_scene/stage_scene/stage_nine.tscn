@@ -383,7 +383,7 @@ position = Vector2(1634, 1204)
 
 [node name="sister_character" type="CharacterBody2D" parent="."]
 z_index = 2
-position = Vector2(1656, 163)
+position = Vector2(1672, 326)
 script = ExtResource("4_jr7ll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sister_character"]
@@ -395,4 +395,4 @@ scale = Vector2(0.32, 0.32)
 sprite_frames = SubResource("SpriteFrames_njf58")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.749041
+frame_progress = 0.206654

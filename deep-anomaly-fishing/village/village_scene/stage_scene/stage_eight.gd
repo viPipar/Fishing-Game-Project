@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var resource = preload("res://dialogue/stage_8.dialogue")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -17,12 +17,12 @@ func _on_area_patung_body_shape_entered(body_rid: RID, body: Node2D, body_shape_
 		$area_rumah.visible = true
 		$blink_rumah.visible=true
 		$blink_patung.visible=false
-		global_village.mcfreeze()
-		await get_tree().create_timer(5.0).timeout #masukkan dialogue
-		global_village.mcfreeze()
+		DialogueManager.show_dialogue_balloon(resource,"stage_8_1")
 	else : pass
 
 func _on_area_rumah_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "MC":
+		DialogueManager.show_dialogue_balloon(resource,"stage_8_2")
+		await global_village.dialogue_finished
 		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_nine.tscn")
 	else : pass

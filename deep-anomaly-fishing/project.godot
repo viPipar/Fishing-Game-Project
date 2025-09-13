@@ -18,12 +18,17 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 SceneTransition="*res://ui/ui_scene/scene_transition.tscn"
 global_village="*res://village/village_script/global_village.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 
@@ -47,6 +52,10 @@ right={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/stage_1.dialogue", "res://dialogue/stage_2.dialogue", "res://dialogue/stage_3.dialogue", "res://dialogue/stage_4.dialogue", "res://dialogue/stage_5.dialogue", "res://dialogue/stage_interlude_5.dialogue", "res://dialogue/stage_6.dialogue", "res://dialogue/stage_7.dialogue", "res://dialogue/stage_8.dialogue", "res://dialogue/stage_interlude_7.dialogue", "res://dialogue/stage_9.dialogue")
 
 [rendering]
 

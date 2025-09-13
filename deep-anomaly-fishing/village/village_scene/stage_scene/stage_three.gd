@@ -1,9 +1,19 @@
 extends Node2D
 
+var resource = preload("res://dialogue/stage_3.dialogue")
+var resource1 = preload("res://dialogue/stage_interlude_5.dialogue")
+var resource2 = preload("res://dialogue/stage_interlude_7.dialogue")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	if global_village.fishing_day==1 :
+		DialogueManager.show_dialogue_balloon(resource,"stage_3_1")
+	elif global_village.fishing_day==2 :
+		DialogueManager.show_dialogue_balloon(resource1,"stage_interlude_5_1")
+	elif global_village.fishing_day==3:
+		DialogueManager.show_dialogue_balloon(resource2,"stage_interlude_7_1")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -14,13 +24,13 @@ func _on_area_pelabuhan_body_shape_entered(body_rid: RID, body: Node2D, body_sha
 		global_village.mcfreeze() #berhentiin player
 		if global_village.fishing_day == 1 :
 			print ("1")
-			await get_tree().create_timer(3).timeout #ganti dengan dialog
+			DialogueManager.show_dialogue_balloon(resource,"stage_3_2")
 		elif global_village.fishing_day == 2 :
 			print ("2")
-			await get_tree().create_timer(3).timeout #ganti dengan dialog
+			DialogueManager.show_dialogue_balloon(resource1,"stage_interlude_5_2")
 		elif global_village.fishing_day == 3 :
 			print ("3")
-			await get_tree().create_timer(3).timeout #ganti dengan dialog
+			DialogueManager.show_dialogue_balloon(resource2,"stage_interlude_7_2")
 		global_village.mcfreeze() #gerakin player
 		print(global_village.fishing_day)
 		$area_pelabuhan.queue_free()
