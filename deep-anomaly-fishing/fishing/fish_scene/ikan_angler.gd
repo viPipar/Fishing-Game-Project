@@ -7,6 +7,7 @@ var O: float = 2 * N
 
 @onready var Sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var MouthArea: Area2D = $AnimatedSprite2D/MouthArea
+@onready var death_area: Area2D = $AnimatedSprite2D/DeathArea
 
 var patrol_points: Array[Vector2] = []
 var current_point_index: int = 0
@@ -100,7 +101,7 @@ func _on_MouthArea_area_entered(area: Area2D) -> void:
 	if area is Area2D and area.name == "HookArea" and not hooked:
 		hook_ref = area
 
-		# hitung offset: posisi ikan relatif ke mulut
+		# hitung offset: posisi ikan relatif ke mulutA
 		var mouth_to_center: Vector2 = global_position - MouthArea.global_position
 		var adjust: Vector2 = Vector2(40, -10) # bisa diatur manual biar pas
 		attach_offset = mouth_to_center + adjust

@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck5fvd5c4miw3"]
+[gd_scene load_steps=11 format=3 uid="uid://ck5fvd5c4miw3"]
 
-[ext_resource type="Script" uid="uid://dn2ur6q260fu" path="res://ikan_tuna.gd" id="1_jq7mi"]
+[ext_resource type="Script" uid="uid://dn2ur6q260fu" path="res://fishing/fish_scene/ikan_tuna.gd" id="1_jq7mi"]
 [ext_resource type="Texture2D" uid="uid://dins3kid4spnp" path="res://fishing/fishing_asset/sprite/tuna/tuna1.png" id="2_be6bn"]
 [ext_resource type="Texture2D" uid="uid://c4b61vqnq1d2t" path="res://fishing/fishing_asset/sprite/tuna/tuna2.png" id="3_ondhi"]
 [ext_resource type="Texture2D" uid="uid://ox5470kibc5g" path="res://fishing/fishing_asset/sprite/tuna/tuna3.png" id="4_cvlgq"]
@@ -36,9 +36,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1iy6b"]
 radius = 30.0666
 
-[node name="ikan_tuna" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq7mi"]
+size = Vector2(772, 195)
+
+[node name="ikan_tuna" type="CharacterBody2D" groups=["Ikan"]]
+scale = Vector2(0.5, 0.5)
 collision_mask = 2
 script = ExtResource("1_jq7mi")
+hooked_rotation_degrees = -90.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(34, -2)
@@ -55,3 +60,9 @@ frame_progress = 0.62049
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
 position = Vector2(448, 20)
 shape = SubResource("CircleShape2D_1iy6b")
+
+[node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(68, -2.5)
+shape = SubResource("RectangleShape2D_jq7mi")

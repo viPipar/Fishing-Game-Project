@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://b5lf0qav5sn1p"]
+
+[ext_resource type="Script" uid="uid://buvywemyqpf8t" path="res://ikan_wakoko.gd" id="1_xtjnq"]
+[ext_resource type="Texture2D" uid="uid://lsnpaoyeshhm" path="res://fishing/fishing_asset/sprite/wakoko/wakoko.png" id="2_mrr0l"]
+[ext_resource type="Texture2D" uid="uid://bi7k2w2qwoaea" path="res://fishing/fishing_asset/sprite/wakoko/wakoko1.png" id="3_nruok"]
+[ext_resource type="Texture2D" uid="uid://dxcs1x2elbtna" path="res://fishing/fishing_asset/sprite/wakoko/wakoko2.png" id="4_bfx1m"]
+[ext_resource type="Texture2D" uid="uid://8ig07jsek0jg" path="res://fishing/fishing_asset/sprite/wakoko/wakoko3.png" id="5_7mtd6"]
+[ext_resource type="Texture2D" uid="uid://cmfa441d2s1li" path="res://fishing/fishing_asset/sprite/wakoko/wakoko4.png" id="6_6glbl"]
+[ext_resource type="Texture2D" uid="uid://i8nv01kq8wvu" path="res://fishing/fishing_asset/sprite/wakoko/wakoko5.png" id="7_fd5rt"]
+[ext_resource type="Texture2D" uid="uid://bbvtvsrwjbua3" path="res://fishing/fishing_asset/sprite/wakoko/wakoko6.png" id="8_44soc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57iw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mrr0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nruok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bfx1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7mtd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6glbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fd5rt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_44soc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6c6t6"]
+radius = 50.4425
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85yb5"]
+size = Vector2(764, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puaai"]
+size = Vector2(706, 70)
+
+[node name="ikan_wakoko" type="CharacterBody2D"]
+position = Vector2(871, 453)
+scale = Vector2(0.3, 0.3)
+collision_mask = 2
+script = ExtResource("1_xtjnq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -36.6667)
+sprite_frames = SubResource("SpriteFrames_57iw1")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.747265
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(332, -143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+position = Vector2(-15.3334, 186.333)
+shape = SubResource("CircleShape2D_6c6t6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-19, -25)
+shape = SubResource("RectangleShape2D_85yb5")
+
+[node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-10, -23)
+shape = SubResource("RectangleShape2D_puaai")

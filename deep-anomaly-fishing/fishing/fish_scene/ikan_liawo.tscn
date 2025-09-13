@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://brtyb3oanvqeg"]
+
+[ext_resource type="Script" uid="uid://co1vk46kp71nv" path="res://fishing/fish_scene/ikan_liawo.gd" id="1_wi2tw"]
+[ext_resource type="Texture2D" uid="uid://c7mm0q4ru0m8j" path="res://fishing/fishing_asset/sprite/liawo/liawo.png" id="2_b72l8"]
+[ext_resource type="Texture2D" uid="uid://w1f625cws6gn" path="res://fishing/fishing_asset/sprite/liawo/liawo1.png" id="3_wst25"]
+[ext_resource type="Texture2D" uid="uid://b0mduvl0yeqgn" path="res://fishing/fishing_asset/sprite/liawo/liawo2.png" id="4_2t8pj"]
+[ext_resource type="Texture2D" uid="uid://boit2ad72vorf" path="res://fishing/fishing_asset/sprite/liawo/liawo3.png" id="5_oavnv"]
+[ext_resource type="Texture2D" uid="uid://bl6p2ckyhfprc" path="res://fishing/fishing_asset/sprite/liawo/liawo4.png" id="6_h7f5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axm54"]
+size = Vector2(663, 247)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6e4nk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b72l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wst25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2t8pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oavnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h7f5n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_26gfu"]
+radius = 20.6155
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdj6q"]
+size = Vector2(570, 134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi2tw"]
+size = Vector2(219, 34)
+
+[node name="ikan_liawo" type="CharacterBody2D" groups=["Ikan"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_wi2tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-66.5, 15.5)
+shape = SubResource("RectangleShape2D_axm54")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6e4nk")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.018933
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+position = Vector2(253, 30)
+shape = SubResource("CircleShape2D_26gfu")
+
+[node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-35, 23)
+shape = SubResource("RectangleShape2D_vdj6q")
+
+[node name="DeathArea" type="Area2D" parent="." groups=["Deaths"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
+position = Vector2(374.5, 18)
+shape = SubResource("RectangleShape2D_wi2tw")
