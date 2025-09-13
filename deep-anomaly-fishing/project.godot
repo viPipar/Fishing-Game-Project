@@ -11,11 +11,13 @@ config_version=5
 [application]
 
 config/name="Deep Anomaly Fishing"
+run/main_scene="uid://7m6hjnbywowl"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
 SceneTransition="*res://ui/ui_scene/scene_transition.tscn"
+global_village="*res://village/village_script/global_village.gd"
 
 [display]
 

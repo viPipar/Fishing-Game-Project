@@ -13,8 +13,11 @@ func _process(delta: float) -> void:
 
 func _on_area_kamar_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "MC":
-		#masukkan dialogue
+		$area_kamar.queue_free()
 		$blink_kamar.visible=false
-		#masukin scene ikan day 3
-		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_seven.tscn")
+		global_village.mcfreeze()
+		await get_tree().create_timer(5.0).timeout #masukkan dialogue
+		global_village.mcfreeze()
+		global_village.fishing_day=3
+		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_three.tscn")
 	else : pass
