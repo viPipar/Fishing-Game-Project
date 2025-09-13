@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3siw6cp2pi75"]
+[gd_scene load_steps=10 format=3 uid="uid://3siw6cp2pi75"]
 
 [ext_resource type="Script" uid="uid://dutf6wbgj3306" path="res://fishing/fishing_asset/fish_scene/kail_pancing.gd" id="1_t06cb"]
 [ext_resource type="Texture2D" uid="uid://n77qqx507bub" path="res://fishing/fishing_asset/sprite/Idle.png" id="2_xj2du"]
@@ -41,6 +41,9 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfhce"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsnkt"]
+size = Vector2(195, 243)
+
 [node name="KailPancing" type="CharacterBody2D"]
 script = ExtResource("1_t06cb")
 
@@ -52,3 +55,9 @@ frame_progress = 0.78388
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qfhce")
+
+[node name="HookArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HookArea"]
+position = Vector2(-1.5, 1.5)
+shape = SubResource("RectangleShape2D_vsnkt")

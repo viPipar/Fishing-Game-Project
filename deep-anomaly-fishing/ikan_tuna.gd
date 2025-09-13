@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 600.0
+@export var speed: float = 650.0
 @export var N: float = 400.0
 @export var M: float = 200.0
 var O: float = 2 * N
@@ -18,7 +18,8 @@ var facing_dir: int = 1
 
 # --- hook system ---
 var hooked: bool = false
-var hook_ref: CharacterBody2D = null
+# sekarang hook_ref menyimpan referensi ke Area2D (HookArea)
+var hook_ref: Area2D = null
 var attach_offset: Vector2 = Vector2.ZERO
 @export var persistent_hook: bool = true
 
@@ -27,21 +28,21 @@ func _ready() -> void:
 
 	# titik patrol (pola silang)
 	patrol_points = [
-		start_position + Vector2(-O,  M),
-		start_position + Vector2(-N, -M),
-		start_position + Vector2( O,  M),
-		start_position + Vector2( N, -M),
+		start_position + Vector2(-N,  M),
+		start_position + Vector2(-O, -M),
+		start_position + Vector2( N,  M),
+		start_position + Vector2( O, -M),
 	]
 	target_position = patrol_points[current_point_index]
 
-	# connect signal ke MouthArea
+	# connect signal ke MouthArea -> gunakan area_entered/area_exited
 	if MouthArea:
-		MouthArea.body_entered.connect(_on_MouthArea_body_entered)
-		MouthArea.body_exited.connect(_on_MouthArea_body_exited)
+		MouthArea.area_entered.connect(_on_MouthArea_area_entered)
+		MouthArea.area_exited.connect(_on_MouthArea_area_exited)
 
 
 func _physics_process(delta: float) -> void:
-	# kalau hooked → ikuti kail
+	# kalau hooked → ikuti hook (Area2D)
 	if hooked and is_instance_valid(hook_ref):
 		global_position = hook_ref.global_position + attach_offset
 		return
@@ -61,13 +62,12 @@ func _physics_process(delta: float) -> void:
 	_update_facing(velocity.x)
 	move_and_slide()
 
-
 func _update_facing(x_dir: float) -> void:
-	if x_dir > 0 and facing_dir != 1:
-		facing_dir = 1
-		_apply_facing()
-	elif x_dir < 0 and facing_dir != -1:
+	if x_dir < 0 and facing_dir != -1:
 		facing_dir = -1
+		_apply_facing()
+	elif x_dir > 0 and facing_dir != 1:
+		facing_dir = 1
 		_apply_facing()
 
 func _apply_facing() -> void:
@@ -77,10 +77,28 @@ func _apply_facing() -> void:
 		Sprite.scale.x = -abs(Sprite.scale.x)  # hadap kiri
 
 
-# --- HOOK LOGIC ---
-func _on_MouthArea_body_entered(body: Node) -> void:
-	if body is CharacterBody2D and body.name == "KailPancing" and not hooked:
-		hook_ref = body
+# --- helpers untuk MouthArea collision on/off ---
+func _disable_mouth_collision_deferred() -> void:
+	# nonaktifkan monitoring dan semua CollisionShape2D direct child (deferred karena dipanggil dari signal)
+	if MouthArea:
+		MouthArea.set_deferred("monitoring", false)
+		for child in MouthArea.get_children():
+			if child is CollisionShape2D:
+				child.set_deferred("disabled", true)
+
+func _enable_mouth_collision_deferred() -> void:
+	if MouthArea:
+		MouthArea.set_deferred("monitoring", true)
+		for child in MouthArea.get_children():
+			if child is CollisionShape2D:
+				child.set_deferred("disabled", false)
+
+
+# --- HOOK LOGIC (Area2D "HookArea") ---
+func _on_MouthArea_area_entered(area: Area2D) -> void:
+	# cek apakah yang memasuki mulut adalah HookArea
+	if area is Area2D and area.name == "HookArea" and not hooked:
+		hook_ref = area
 
 		# hitung offset: posisi ikan relatif ke mulut
 		var mouth_to_center: Vector2 = global_position - MouthArea.global_position
@@ -88,20 +106,23 @@ func _on_MouthArea_body_entered(body: Node) -> void:
 		attach_offset = mouth_to_center + adjust
 
 		hooked = true
-		MouthArea.monitoring = false
 
-func _on_MouthArea_body_exited(body: Node) -> void:
-	if persistent_hook and hooked and body == hook_ref:
+		# **DISABLE** MouthArea collision (deferred agar aman)
+		_disable_mouth_collision_deferred()
+
+func _on_MouthArea_area_exited(area: Area2D) -> void:
+	# kalau persistent_hook true, jangan detach saat area keluar (selama masih hooked)
+	if persistent_hook and hooked and area == hook_ref:
 		return
-	if body == hook_ref:
+	if area == hook_ref:
 		_hook_detach()
 
 func _hook_detach() -> void:
 	hooked = false
 	hook_ref = null
 	attach_offset = Vector2.ZERO
-	if MouthArea:
-		MouthArea.monitoring = true
+	# re-enable MouthArea collision
+	_enable_mouth_collision_deferred()
 
 func force_unhook() -> void:
 	_hook_detach()

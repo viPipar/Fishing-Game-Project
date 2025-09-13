@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c33w54cyjuxe5" path="res://fishing/fishing_asset/sprite/angler/anglerfish.png" id="6_rhhs0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px4g1"]
-size = Vector2(692, 287)
+size = Vector2(648, 287)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pbuvq"]
 animations = [{
@@ -40,7 +40,7 @@ radius = 87.5728
 script = ExtResource("1_csrpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-53, 17.5)
+position = Vector2(-75, 17.5)
 shape = SubResource("RectangleShape2D_px4g1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
