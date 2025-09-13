@@ -16,6 +16,7 @@ collision_mask = 2
 
 [node name="ikan_angler" parent="." instance=ExtResource("2_rfpkf")]
 position = Vector2(724, 662)
+scale = Vector2(0.5, 0.5)
 collision_mask = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
