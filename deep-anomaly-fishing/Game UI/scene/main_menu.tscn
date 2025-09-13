@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://ibc4j214lmh8"]
+
+[ext_resource type="Script" uid="uid://8axydmw6rdby" path="res://Game UI/scene/main_menu.gd" id="1_cgb3b"]
+[ext_resource type="Texture2D" uid="uid://bbdfknabpbtde" path="res://Game UI/assets/istockphoto-1206505233-612x612.jpg" id="1_yv81n"]
+[ext_resource type="FontFile" uid="uid://0lrnm06bod14" path="res://Game UI/assets/font/Minecraft.ttf" id="2_87j08"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_cgb3b")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(3.18908, 3.18908)
+texture = ExtResource("1_yv81n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.0
+offset_top = -236.0
+offset_right = 475.0
+offset_bottom = 438.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 20
+
+[node name="Start" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_font_sizes/font_size = 50
+text = "START"
+flat = true
+
+[node name="How to Play" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(220, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_font_sizes/font_size = 50
+text = "How to Play"
+flat = true
+
+[node name="Credit" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_fonts/font = ExtResource("2_87j08")
+theme_override_font_sizes/font_size = 50
+text = "Credit"
+flat = true
+
+[node name="Exit" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.529067, 0.529067, 0.529067, 1)
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+flat = true
+
+[connection signal="pressed" from="CenterContainer/GridContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/How to Play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/Exit" to="." method="_on_exit_pressed"]
