@@ -1,0 +1,7 @@
+[gd_resource type="FontFile" load_steps=2 format=2]
+
+[ext_resource type="FontFile" uid="uid://cuihst5lyvd6p" path="res://Stardew/assets/Nunito/Nunito-SemiBold.ttf" id="1"]
+
+[resource]
+size = 14
+font_data = ExtResource( 1 )
