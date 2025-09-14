@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://c02m22ipakjc6"]
+
+[ext_resource type="Texture2D" uid="uid://t8s4o2v60837" path="res://fishing/fishing_asset/sprite/jantung/jantung.png" id="1_n6fig"]
+[ext_resource type="Script" uid="uid://3re5d810wgdg" path="res://ikan_jantung.gd" id="1_umi83"]
+[ext_resource type="Texture2D" uid="uid://bshob3a4f17v2" path="res://fishing/fishing_asset/sprite/jantung/jantung1.png" id="2_umi83"]
+[ext_resource type="Texture2D" uid="uid://dpkg00ugydf66" path="res://fishing/fishing_asset/sprite/jantung/jantung2.png" id="3_leqfc"]
+[ext_resource type="Texture2D" uid="uid://crlr02q7pjjdw" path="res://fishing/fishing_asset/sprite/jantung/jantung3.png" id="4_iguqk"]
+[ext_resource type="Texture2D" uid="uid://ce1wgmj0x8h6v" path="res://fishing/fishing_asset/sprite/jantung/jantung4.png" id="5_4irbn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_as16k"]
+size = Vector2(757, 210)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ecnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n6fig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_umi83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_leqfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iguqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4irbn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxk7d"]
+radius = 87.1321
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrbk8"]
+size = Vector2(718, 209)
+
+[node name="ikan_jantung" type="CharacterBody2D"]
+scale = Vector2(0.4, 0.4)
+collision_mask = 2
+script = ExtResource("1_umi83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 13)
+shape = SubResource("RectangleShape2D_as16k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ecnm")
+animation = &"idle"
+frame_progress = 0.302341
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D" groups=["Deaths"]]
+position = Vector2(306, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+shape = SubResource("CircleShape2D_xxk7d")
+
+[node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
+process_mode = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(2, 16.5)
+shape = SubResource("RectangleShape2D_hrbk8")

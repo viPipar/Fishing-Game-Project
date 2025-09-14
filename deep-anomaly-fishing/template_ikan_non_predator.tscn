@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfndjv77h32gu"]
+
+[ext_resource type="Texture2D" uid="uid://cb0hvd4kpyd7" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh.png" id="1_xf7l1"]
+[ext_resource type="Texture2D" uid="uid://bqfwc0gtpftji" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh1.png" id="2_e3bp4"]
+[ext_resource type="Texture2D" uid="uid://dxtiudvn2b46q" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh2.png" id="3_cx3lo"]
+[ext_resource type="Texture2D" uid="uid://6g6keh6sl6wo" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh3.png" id="4_x7d5g"]
+[ext_resource type="Texture2D" uid="uid://dr6c1587nc2nm" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh4.png" id="5_jlnfu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ecnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xf7l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_e3bp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cx3lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x7d5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jlnfu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ecnm")
+animation = &"idle"
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+
+[node name="DetectionArea" type="Area2D" parent="."]
+process_mode = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
-@export var N: float = 300.0
-@export var M: float = 50
-@export var adjust:Vector2 = Vector2(-200, 0)
+@export var speed: float = 400.0
+@export var N: float = 600.0
+@export var M: float = 200.0
+@export var adjust:Vector2 = Vector2(0, 0)
 var O: float = 2 * N
 
 @onready var Sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -40,10 +40,10 @@ func _ready() -> void:
 
 	# titik patrol
 	patrol_points = [
-		start_position + Vector2(N,  0),
-		start_position + Vector2(0, -M),
-		start_position + Vector2(-N,  0),
-		start_position + Vector2( 0, M),
+		start_position + Vector2(-N,  M),
+		start_position + Vector2(-O, -M),
+		start_position + Vector2( N,  M),
+		start_position + Vector2( O, -M),
 	]
 	target_position = patrol_points[current_point_index]
 

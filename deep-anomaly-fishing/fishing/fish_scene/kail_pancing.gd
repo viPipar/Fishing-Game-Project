@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 			var input_x = 0
 			var input_y = 0
 			if Input.is_action_pressed("up"):
-				input_y -= 200
+				input_y -= 400
 			if Input.is_action_pressed("right"):
 				input_x += MOVE_SPEED
 			if Input.is_action_pressed("left"):
