@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx6thm7wx4524"]
+[gd_scene load_steps=8 format=3 uid="uid://bx6thm7wx4524"]
 
 [ext_resource type="Texture2D" uid="uid://cgsgw44qkg6fl" path="res://Stardew/assets/Fishing-Column.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bq28ueqohywon" path="res://Stardew/assets/Progress-Empty.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://63uv2fqjd18q" path="res://Stardew/assets/Progress-Bar.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://bhoe4ufpwtq87" path="res://Stardew/assets/Hook.png" id="4"]
 [ext_resource type="Script" uid="uid://cgflfnarasqcv" path="res://Stardew/scene/Game.gd" id="5"]
+[ext_resource type="AudioStream" uid="uid://dx1t1ciaqcj6" path="res://fishing/audio/If-Hook-Move (1).mp3" id="6_maexj"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(13.5985, 37.9946)
@@ -52,3 +53,6 @@ collision_mask = 524288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hook/Area2D"]
 shape = SubResource("1")
+
+[node name="Hooking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_maexj")

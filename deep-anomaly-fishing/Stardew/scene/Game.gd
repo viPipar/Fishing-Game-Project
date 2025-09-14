@@ -10,6 +10,7 @@ const LAYER_VAL := 20
 
 var fishable: bool = true
 var fish: PackedScene = preload("res://Stardew/scene/Fish.tscn")
+@onready var hooking: AudioStreamPlayer = $Hooking
 
 func _ready() -> void:
 	$Hook/Area2D.area_entered.connect(func(a):
@@ -20,9 +21,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Tombol clicker
 	if Input.is_action_pressed("minigame"):
+		# play hooking sound while minigame pressed (only start if not already playing)
+		if is_instance_valid(hooking) and not hooking.playing:
+			hooking.play()
 		if hookVelocity > -maxVelocity:
 			hookVelocity -= hookAcceleration
 	else:
+		# stop hooking sound when released
+		if is_instance_valid(hooking) and hooking.playing:
+			hooking.stop()
 		if hookVelocity < maxVelocity:
 			hookVelocity += hookDeceleration
 
