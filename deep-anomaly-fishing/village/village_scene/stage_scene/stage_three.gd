@@ -7,13 +7,15 @@ var resource2 = preload("res://dialogue/stage_interlude_7.dialogue")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$quest_guide/Panel/quest_text.play("null")
 	if global_village.fishing_day==1 :
 		DialogueManager.show_dialogue_balloon(resource,"stage_3_1")
 	elif global_village.fishing_day==2 :
 		DialogueManager.show_dialogue_balloon(resource1,"stage_interlude_5_1")
 	elif global_village.fishing_day==3:
 		DialogueManager.show_dialogue_balloon(resource2,"stage_interlude_7_1")
-
+	await global_village.dialogue_finished
+	$quest_guide/Panel/quest_text.play("harbour")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

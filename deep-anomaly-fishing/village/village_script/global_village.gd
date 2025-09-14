@@ -3,6 +3,7 @@ extends Node
 var mc_movement=true
 var fishing_day = 1
 signal dialogue_finished
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	DialogueManager.connect("dialogue_ended", Callable(self, "_on_dialogue_ended"))

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c00orb25pcjis"]
+[gd_scene load_steps=11 format=3 uid="uid://c00orb25pcjis"]
 
 [ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_5kcwo"]
 [ext_resource type="Script" uid="uid://ct8cbwft6um4u" path="res://village/village_scene/stage_scene/stage_four.gd" id="1_mik1u"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_mik1u"]
 [ext_resource type="Texture2D" uid="uid://c37qej3mdvhv" path="res://ui/ui_asset/panel_asset/go in text.png" id="4_pnnq7"]
+[ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="5_f5cqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnnq7"]
 
@@ -122,6 +123,8 @@ offset_top = 26.2222
 offset_right = 48.0
 offset_bottom = 66.2222
 scale = Vector2(0.261795, 0.12765)
+
+[node name="quest_guide" parent="." instance=ExtResource("5_f5cqs")]
 
 [connection signal="body_shape_entered" from="area_patung" to="." method="_on_area_patung_body_shape_entered"]
 [connection signal="body_shape_entered" from="area_rumah" to="." method="_on_area_rumah_body_shape_entered"]
