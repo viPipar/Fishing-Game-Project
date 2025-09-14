@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://oaiatosoqqxi"]
+
+[ext_resource type="Script" uid="uid://cpte3omfxk75g" path="res://main_menu.gd" id="1_jv72w"]
+[ext_resource type="Texture2D" uid="uid://ddohw7eh4ek6g" path="res://ui/ui_asset/main.png" id="2_7hhhf"]
+[ext_resource type="Texture2D" uid="uid://dis12w076ys5r" path="res://ui/ui_asset/bub.png" id="3_kghir"]
+[ext_resource type="Texture2D" uid="uid://cw2sov7okrlgj" path="res://ui/ui_asset/text.png" id="4_nwgli"]
+
+[sub_resource type="Animation" id="Animation_6snrp"]
+resource_name = "bubble"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bubel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1080)]
+}
+
+[sub_resource type="Animation" id="Animation_3klbn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bubel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6jbs8"]
+_data = {
+&"RESET": SubResource("Animation_3klbn"),
+&"bubble": SubResource("Animation_6snrp")
+}
+
+[node name="main_menu" type="Node2D"]
+script = ExtResource("1_jv72w")
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_7hhhf")
+centered = false
+
+[node name="bubel" type="Node2D" parent="."]
+
+[node name="bubble1" type="Sprite2D" parent="bubel"]
+texture = ExtResource("3_kghir")
+centered = false
+
+[node name="bubble2" type="Sprite2D" parent="bubel"]
+texture = ExtResource("3_kghir")
+centered = false
+offset = Vector2(0, 1080)
+
+[node name="animasi" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6jbs8")
+}
+autoplay = "bubble"
+
+[node name="TextureRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0.662745)
+offset_right = 1989.0
+offset_bottom = 1173.0
+
+[node name="text" type="Sprite2D" parent="."]
+texture = ExtResource("4_nwgli")
+centered = false
+
+[node name="new_game" type="TextureButton" parent="."]
+offset_left = 589.0
+offset_top = 417.0
+offset_right = 629.0
+offset_bottom = 457.0
+scale = Vector2(19.1897, 2.19903)
+
+[node name="exit_game" type="TextureButton" parent="."]
+offset_left = 797.0
+offset_top = 584.0
+offset_right = 837.0
+offset_bottom = 624.0
+scale = Vector2(8.72844, 2.07684)
+
+[connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="exit_game" to="." method="_on_exit_game_pressed"]

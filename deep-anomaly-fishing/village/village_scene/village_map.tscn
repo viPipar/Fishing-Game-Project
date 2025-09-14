@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://co3dyoynb6n4"]
+[gd_scene load_steps=29 format=4 uid="uid://co3dyoynb6n4"]
 
 [ext_resource type="Texture2D" uid="uid://ht3brtfvoc6a" path="res://village/village_asset/Water_and_Snow_1.png" id="1_emm1b"]
 [ext_resource type="Texture2D" uid="uid://b6je4sw65p0er" path="res://village/village_asset/Lake_and_Bridge.png" id="2_3vqi5"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://q6dag7g028co" path="res://village/village_asset/TX FX Torch Flame.png" id="9_kk7fx"]
 [ext_resource type="Texture2D" uid="uid://bj5nkkqs6mnea" path="res://village/village_asset/pohon.png" id="10_3vqi5"]
 [ext_resource type="Texture2D" uid="uid://cmvrr0f88mk0b" path="res://village/village_asset/TX Village Props.png" id="10_ubpq8"]
+[ext_resource type="Texture2D" uid="uid://bperunhn235yd" path="res://village/village_asset/boat.png" id="12_ojx0f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imlwd"]
 texture = ExtResource("1_emm1b")
@@ -997,6 +998,21 @@ sources/12 = SubResource("TileSetAtlasSource_28my1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ojx0f"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_28my1"]
+atlas = ExtResource("12_ojx0f")
+region = Rect2(96, 64, 96, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfvnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28my1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="village_map" type="Node2D"]
 y_sort_enabled = true
 
@@ -1018,3 +1034,9 @@ tile_set = SubResource("TileSet_rs3x2")
 position = Vector2(-6805, -667)
 scale = Vector2(-7.10395, 206.473)
 shape = SubResource("RectangleShape2D_ojx0f")
+
+[node name="kapal" type="AnimatedSprite2D" parent="."]
+position = Vector2(-717, 1087)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_wfvnv")
+animation = &"idle"
