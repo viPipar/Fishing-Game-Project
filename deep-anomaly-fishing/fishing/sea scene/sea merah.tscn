@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7kss3oi84gi0"]
+[gd_scene load_steps=21 format=3 uid="uid://c7kss3oi84gi0"]
 
 [ext_resource type="Script" uid="uid://bij27x3ymqeyp" path="res://fishing/sea scene/sea merah.gd" id="1_4o43e"]
 [ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="2_5vbuc"]
+[ext_resource type="AudioStream" uid="uid://d3sdql3uhjxmq" path="res://audio/Fishing_Success.mp3" id="2_8mwwd"]
 [ext_resource type="PackedScene" uid="uid://bx6thm7wx4524" path="res://Stardew/scene/Game.tscn" id="3_4o43e"]
 [ext_resource type="Texture2D" uid="uid://cm6vwddx5gn27" path="res://fishing/background/surface.png" id="4_nve83"]
 [ext_resource type="Texture2D" uid="uid://x06je4ntnnan" path="res://fishing/background/m_bg3.png" id="4_pp3bp"]
@@ -30,6 +31,9 @@ size = Vector2(2684.5, 127.375)
 
 [node name="Sea" type="Node2D"]
 script = ExtResource("1_4o43e")
+
+[node name="Fish Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8mwwd")
 
 [node name="KailPancing" parent="." groups=["Kail"] instance=ExtResource("2_5vbuc")]
 z_index = 3

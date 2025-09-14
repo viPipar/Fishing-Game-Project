@@ -1,8 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dlhsi7theah4q"]
+[gd_scene load_steps=23 format=3 uid="uid://dlhsi7theah4q"]
 
 [ext_resource type="Script" uid="uid://6yglyu6u7xgr" path="res://fishing/sea scene/sea 3.gd" id="1_23adc"]
+[ext_resource type="AudioStream" uid="uid://d3sdql3uhjxmq" path="res://audio/Fishing_Success.mp3" id="2_51geu"]
 [ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="2_minnw"]
 [ext_resource type="PackedScene" uid="uid://bx6thm7wx4524" path="res://Stardew/scene/Game.tscn" id="3_q63l8"]
+[ext_resource type="AudioStream" uid="uid://dox7g006obgqx" path="res://audio/Sea-Sound-Effect.mp3" id="3_tc1a8"]
 [ext_resource type="Texture2D" uid="uid://cshmk724fq614" path="res://fishing/background/bg3.png" id="4_23adc"]
 [ext_resource type="Texture2D" uid="uid://4jpm7pctturj" path="res://fishing/background/permukaan.png" id="4_y3bnb"]
 [ext_resource type="Texture2D" uid="uid://u8sujst5d2n0" path="res://fishing/background/bg3t.png" id="5_y3bnb"]
@@ -29,8 +31,14 @@ size = Vector2(128, 13569)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ylwuy"]
 size = Vector2(2684.5, 127.375)
 
-[node name="Sea2" type="Node2D"]
+[node name="Sea3" type="Node2D"]
 script = ExtResource("1_23adc")
+
+[node name="Fish Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_51geu")
+
+[node name="Sea" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tc1a8")
 
 [node name="KailPancing" parent="." groups=["Kail"] instance=ExtResource("2_minnw")]
 z_index = 3

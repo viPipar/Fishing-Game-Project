@@ -10,6 +10,7 @@ const PULL_FORCE := -200.0
 const MAX_PULL_FORCE := -10.0
 const MAX_DOWN_FORCE := 400.0
 const MOVE_SPEED := 300.0
+@onready var fish_success: AudioStreamPlayer = $\"../Fish Success\"
 
 @export var deactivate_delay: float = 0.03  # jeda sebelum hook nonaktif
 @export var detach_duration: float = 1.0    # durasi DetachArea aktif dan HookArea nonaktif (detik)
@@ -53,15 +54,19 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed(\"up\"):
 			velocity.y = PULL_FORCE * 1.5
 			is_input = true
+			fish_success.play()
 		if Input.is_action_pressed(\"down\"):
 			velocity.y = min(velocity.y + 50, MAX_DOWN_FORCE)
 			is_input = true
+			fish_success.play()
 		if Input.is_action_pressed(\"right\"):
 			velocity.x = MOVE_SPEED
 			is_input = true
+			fish_success.play()
 		if Input.is_action_pressed(\"left\"):
 			velocity.x = -MOVE_SPEED
 			is_input = true
+			fish_success.play()
 
 	# ===== gerakan otomatis saat kail menempel ikan =====
 		if is_instance_valid(detect_area):
