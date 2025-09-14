@@ -41,12 +41,12 @@ func _on_area_pelabuhan_body_shape_entered(body_rid: RID, body: Node2D, body_sha
 func _on_area_kapal_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "MC":
 		if global_village.fishing_day == 1 :
-			SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_four.tscn")
+			SceneTransition.change_scene("res://fishing/sea scene/sea 1.tscn")
 			print("fishing day 1")
 		elif global_village.fishing_day == 2 :
-			SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_six.tscn")
+			SceneTransition.change_scene("res://fishing/sea scene/sea 2.tscn")
 			print("fishing day 2")
 		elif global_village.fishing_day >= 3:
-			SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_eight.tscn")
+			SceneTransition.change_scene("res://fishing/sea scene/sea 3.tscn")
 			print("fishing day 3")
 	else : pass

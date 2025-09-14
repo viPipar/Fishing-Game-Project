@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clyc7vt3hnl43" path="res://village/village_scene/stage_scene/stage_eight.gd" id="1_i6rth"]
 [ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_pfhjv"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_i6rth"]
-[ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="4_nqasw"]
+[ext_resource type="PackedScene" path="res://ui/ui_scene/quest_guide.tscn" id="4_nqasw"]
 [ext_resource type="Texture2D" uid="uid://c6xym5vbk0hr1" path="res://village/village_asset/animation/pact_animation/1.png" id="5_kspbw"]
 [ext_resource type="Texture2D" uid="uid://bpdtwisrgm5r1" path="res://village/village_asset/animation/pact_animation/2.png" id="6_jj7p3"]
 [ext_resource type="Texture2D" uid="uid://74gbna33xtx4" path="res://village/village_asset/animation/pact_animation/3.png" id="7_so7gv"]
