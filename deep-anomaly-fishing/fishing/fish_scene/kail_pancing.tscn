@@ -51,22 +51,19 @@ func _process(delta: float) -> void:
 		velocity.y = 0.0
 	else:
 	# ===== input movement normal =====
+		
 		if Input.is_action_pressed(\"up\"):
 			velocity.y = PULL_FORCE * 1.5
 			is_input = true
-			fish_success.play()
 		if Input.is_action_pressed(\"down\"):
 			velocity.y = min(velocity.y + 50, MAX_DOWN_FORCE)
 			is_input = true
-			fish_success.play()
 		if Input.is_action_pressed(\"right\"):
 			velocity.x = MOVE_SPEED
 			is_input = true
-			fish_success.play()
 		if Input.is_action_pressed(\"left\"):
 			velocity.x = -MOVE_SPEED
 			is_input = true
-			fish_success.play()
 
 	# ===== gerakan otomatis saat kail menempel ikan =====
 		if is_instance_valid(detect_area):

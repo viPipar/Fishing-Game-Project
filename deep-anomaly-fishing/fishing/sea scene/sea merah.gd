@@ -18,4 +18,4 @@ func _process(delta: float) -> void:
 		global_fishing.coin += 10
 
 func _ready() -> void:
-	$Sea.play()
+	pass
