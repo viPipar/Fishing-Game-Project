@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://batbio0w0pi8k"
+path="res://.godot/imported/stage_interlude_5.dialogue-a9593e1480e99b6ca481dc1a9d7dfbb6.tres"
+
+[deps]
+
+source_file="res://dialogue/stage_interlude_5.dialogue"
+dest_files=["res://.godot/imported/stage_interlude_5.dialogue-a9593e1480e99b6ca481dc1a9d7dfbb6.tres"]
+
+[params]
+
+defaults=true

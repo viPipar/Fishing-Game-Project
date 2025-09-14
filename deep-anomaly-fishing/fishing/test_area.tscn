@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://stfkdviuvdg5"]
+
+[ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/kail_pancing.tscn" id="1_64fjj"]
+[ext_resource type="PackedScene" uid="uid://chqn7a0cg5cu7" path="res://fishing/ikan_angler.tscn" id="2_rfpkf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfpkf"]
+size = Vector2(984, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="KailPancing" parent="." instance=ExtResource("1_64fjj")]
+position = Vector2(752, 68)
+collision_mask = 2
+
+[node name="ikan_angler" parent="." instance=ExtResource("2_rfpkf")]
+position = Vector2(655, 347)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(482, 0)
+shape = SubResource("RectangleShape2D_rfpkf")

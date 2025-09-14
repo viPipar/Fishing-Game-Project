@@ -29,5 +29,6 @@ func _physics_process(_delta):
 
 	# Mainkan animasi sesuai arah
 	sprite.play(anim)
-
-	move_and_slide()
+	if global_village.mc_movement==true:
+		move_and_slide()
+	else : pass
