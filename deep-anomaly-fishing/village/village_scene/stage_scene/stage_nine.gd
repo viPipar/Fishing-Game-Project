@@ -10,7 +10,7 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(resource,"stage_9_1")
 	await global_village.dialogue_finished
 	await get_tree().create_timer(3.0).timeout
-	SceneTransition.change_scene("res://ui/ui_scene/credit_scene.tscn")
+	SceneTransition.change_scene("res://ui/ui_scene/jantung.tscn")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
