@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 			if $Progress.value <= 0.0:
 				lost_fish()
 	if global_fishing.hooking == true:
-		spawn_seriously()
+		spawn_impossible()
 
 func caught_fish() -> void:
 	if has_node("Fish"):
@@ -75,6 +75,7 @@ func caught_fish() -> void:
 		"difficulty": "seriously"
 	}
 	global_fishing.emit_signal("fishing_result", true, payload)
+	global_fishing.coin += 4
 
 	
 	get_tree().paused = false

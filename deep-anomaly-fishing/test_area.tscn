@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://stfkdviuvdg5"]
+[gd_scene load_steps=14 format=3 uid="uid://ctgvoccwe3uq0"]
 
 [ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="1_od0h0"]
 [ext_resource type="PackedScene" uid="uid://ddg13kyuwe7uw" path="res://fishing/fish_scene/ikan_angler.tscn" id="2_vt2yd"]
@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://brtyb3oanvqeg" path="res://fishing/fish_scene/ikan_liawo.tscn" id="5_vt2yd"]
 [ext_resource type="PackedScene" uid="uid://cphra3p67al7h" path="res://ikan_shark.tscn" id="7_6ii2q"]
 [ext_resource type="PackedScene" uid="uid://5nn8sji48e10" path="res://ikan_belut.tscn" id="8_7aw3l"]
-[ext_resource type="PackedScene" uid="uid://w88lcc4gcjp4" path="res://ikan_plongo.tscn" id="9_7aw3l"]
-[ext_resource type="PackedScene" uid="uid://bt03qvqxku83d" path="res://ikan_aneh.tscn" id="10_ry2yl"]
-[ext_resource type="PackedScene" uid="uid://dc8xvytx4ulxc" path="res://ikan_biru.tscn" id="11_1ro0w"]
-[ext_resource type="PackedScene" uid="uid://c02m22ipakjc6" path="res://ikan_jantung.tscn" id="11_4qb3o"]
+[ext_resource type="PackedScene" path="res://ikan_plongo.tscn" id="9_7aw3l"]
+[ext_resource type="PackedScene" path="res://ikan_aneh.tscn" id="10_ry2yl"]
+[ext_resource type="PackedScene" path="res://ikan_biru.tscn" id="11_1ro0w"]
+[ext_resource type="PackedScene" path="res://ikan_jantung.tscn" id="11_4qb3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfpkf"]
 size = Vector2(1942, 20)
@@ -18,7 +18,7 @@ size = Vector2(1942, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwgse"]
 size = Vector2(253, 20)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="KailPancing" parent="." instance=ExtResource("1_od0h0")]
 position = Vector2(752, 68)
@@ -38,7 +38,6 @@ shape = SubResource("RectangleShape2D_rfpkf")
 
 [node name="ikan_nemo" parent="." instance=ExtResource("3_xdpsd")]
 position = Vector2(1185, 552)
-scale = Vector2(0.05, 0.05)
 
 [node name="ikan_tuna" parent="." instance=ExtResource("4_6ii2q")]
 position = Vector2(1208, 326)

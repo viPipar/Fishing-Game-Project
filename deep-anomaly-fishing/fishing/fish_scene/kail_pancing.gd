@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	else:
 	# ===== input movement normal =====
 		if Input.is_action_pressed("up"):
-			velocity.y = PULL_FORCE * 1.5
+			velocity.y = PULL_FORCE * 3
 			is_input = true
 		if Input.is_action_pressed("down"):
 			velocity.y = min(velocity.y + 50, MAX_DOWN_FORCE)

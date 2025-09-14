@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cmckwsr7snv5w" path="res://village/village_scene/stage_scene/stage_three.gd" id="1_htwbp"]
 [ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_myatq"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_htwbp"]
-[ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="4_cl8su"]
+[ext_resource type="PackedScene" path="res://ui/ui_scene/quest_guide.tscn" id="4_cl8su"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_myatq"]
 size = Vector2(8.89248, 6.72065)

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_jxeqa"]
 [ext_resource type="Texture2D" uid="uid://c2lqswhk0mdyw" path="res://ui/ui_asset/panel_asset/go outside text.png" id="3_nqycm"]
 [ext_resource type="Texture2D" uid="uid://bju0jchi2vwb7" path="res://ui/ui_asset/panel_asset/medicine_panel_text.png" id="4_lr0my"]
-[ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="6_nm5ss"]
+[ext_resource type="PackedScene" path="res://ui/ui_scene/quest_guide.tscn" id="6_nm5ss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7hwh"]
 

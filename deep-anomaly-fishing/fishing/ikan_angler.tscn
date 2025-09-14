@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bho81hpnf1fnv"]
 
-[ext_resource type="Script" path="res://fishing/ikan_angler.gd" id="1_2yn8m"]
+[ext_resource type="Script" uid="uid://2b4vapwc1oc0" path="res://fishing/ikan_angler.gd" id="1_2yn8m"]
 [ext_resource type="Texture2D" uid="uid://cr6wgmbxxbvbq" path="res://fishing/fishing_asset/sprite/angler/Walk.png" id="2_3kcqo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e38mq"]

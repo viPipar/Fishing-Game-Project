@@ -1,0 +1,115 @@
+[gd_scene load_steps=18 format=3 uid="uid://doqsyl4ggiiek"]
+
+[ext_resource type="Script" uid="uid://d1wyjh6sqk1r2" path="res://fishing/sea scene/sea 1.gd" id="1_mtu7c"]
+[ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="2_minnw"]
+[ext_resource type="PackedScene" uid="uid://bx6thm7wx4524" path="res://Stardew/scene/Game.tscn" id="3_q63l8"]
+[ext_resource type="Texture2D" uid="uid://cshmk724fq614" path="res://fishing/background/bg3.png" id="4_23adc"]
+[ext_resource type="Texture2D" uid="uid://4jpm7pctturj" path="res://fishing/background/permukaan.png" id="4_y3bnb"]
+[ext_resource type="Texture2D" uid="uid://u8sujst5d2n0" path="res://fishing/background/bg3t.png" id="5_y3bnb"]
+[ext_resource type="Texture2D" uid="uid://m2nn208p2rjk" path="res://fishing/background/kapal.png" id="6_minnw"]
+[ext_resource type="Texture2D" uid="uid://cgxubnbbgfnpn" path="res://fishing/background/bg2.png" id="6_ua3ve"]
+[ext_resource type="Texture2D" uid="uid://co414qfkcc6c" path="res://fishing/background/bg2t.png" id="7_l33vh"]
+[ext_resource type="Texture2D" uid="uid://dbxudst32hii8" path="res://fishing/background/bg1l.png" id="8_er6aw"]
+[ext_resource type="Texture2D" uid="uid://3qcp6o6hubcn" path="res://fishing/background/bg1.png" id="9_51geu"]
+[ext_resource type="Texture2D" uid="uid://vp5og205do7y" path="res://fishing/background/bg1t.png" id="10_tc1a8"]
+[ext_resource type="Texture2D" uid="uid://dggrt8sung050" path="res://fishing/background/kalo digabungin gini.png" id="13_ua3ve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fnbt"]
+size = Vector2(2088, 1765)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rx1d"]
+size = Vector2(80, 13633)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onaj4"]
+size = Vector2(128, 13569)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylwuy"]
+size = Vector2(2684.5, 127.375)
+
+[node name="Sea2" type="Node2D"]
+script = ExtResource("1_mtu7c")
+
+[node name="KailPancing" parent="." groups=["Kail"] instance=ExtResource("2_minnw")]
+z_index = 3
+position = Vector2(2, -2279)
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="KailPancing"]
+limit_left = -960
+limit_top = -3990
+limit_right = 959
+limit_bottom = 2905
+
+[node name="MinigameLayer" type="CanvasLayer" parent="."]
+physics_interpolation_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MinigameLayer"]
+modulate = Color(1, 1, 1, 0.270588)
+offset_right = 1933.0
+offset_bottom = 1098.0
+color = Color(0, 0, 0, 1)
+
+[node name="Stardew" parent="MinigameLayer" instance=ExtResource("3_q63l8")]
+position = Vector2(966, 550)
+scale = Vector2(0.648907, 0.648907)
+
+[node name="Permukaan" type="Sprite2D" parent="."]
+position = Vector2(0, -2271)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_y3bnb")
+
+[node name="Background 3" type="Sprite2D" parent="."]
+position = Vector2(0, 7774)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_23adc")
+
+[node name="Bg3t" type="Sprite2D" parent="Background 3"]
+texture = ExtResource("5_y3bnb")
+
+[node name="Kapal" type="Sprite2D" parent="Background 3"]
+texture = ExtResource("6_minnw")
+
+[node name="Background 2" type="Sprite2D" parent="."]
+position = Vector2(0, 4442)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_ua3ve")
+
+[node name="Bg2t" type="Sprite2D" parent="Background 2"]
+texture = ExtResource("7_l33vh")
+
+[node name="Bg1l" type="Sprite2D" parent="Background 2"]
+position = Vector2(0, -2177.33)
+texture = ExtResource("8_er6aw")
+
+[node name="Background 1" type="Sprite2D" parent="."]
+position = Vector2(0, 1176)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("9_51geu")
+
+[node name="Bg1t" type="Sprite2D" parent="Background 1"]
+texture = ExtResource("10_tc1a8")
+
+[node name="World Limit" type="StaticBody2D" parent="."]
+position = Vector2(-11, -583)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Limit"]
+position = Vector2(36, -2595.5)
+shape = SubResource("RectangleShape2D_1fnbt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World Limit"]
+position = Vector2(-1005, 3266.5)
+shape = SubResource("RectangleShape2D_6rx1d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World Limit"]
+position = Vector2(1049, 3298.5)
+shape = SubResource("RectangleShape2D_onaj4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="World Limit"]
+position = Vector2(13, 10156)
+shape = SubResource("RectangleShape2D_ylwuy")
+
+[node name="KaloDigabunginGini" type="Sprite2D" parent="."]
+position = Vector2(-21, -2404)
+texture = ExtResource("13_ua3ve")
