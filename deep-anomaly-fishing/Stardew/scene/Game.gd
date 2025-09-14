@@ -10,7 +10,7 @@ var fishable: bool = true
 var fish: PackedScene = preload("res://Stardew/scene/Fish.tscn")
 
 func _ready() -> void:
-	spawn_impossible()
+	spawn_seriously()
 
 func _process(delta: float) -> void:
 	# Tombol clicker
@@ -60,12 +60,17 @@ func lost_fish() -> void:
 	$Progress.value = 0.0
 	fishable = true
 	
-func add_fish(min_d: float, max_d: float, move_speed: float, move_time: float) -> void:
+func add_fish(min_y: float, max_y: float, move_speed: float, move_time: float) -> void:
 	var f = fish.instantiate()
-	f.position = Vector2($Hook.position.x, $Hook.position.y)
+	
+	if min_y > max_y:
+		var tmp = min_y
+		min_y = max_y
+		max_y = tmp
 
-	f.min_distance = min_d
-	f.max_distance = max_d
+	f.position = Vector2($Hook.position.x, clamp($Hook.position.y, min_y, max_y))
+	f.min_y = min_y
+	f.max_y = max_y
 	f.movement_speed = move_speed
 	f.movement_time = move_time
 
@@ -92,7 +97,7 @@ func spawn_impossible() -> void:
 
 func spawn_seriously() -> void:
 	if fishable:
-		add_fish(85, 160, 2, 1)
+		add_fish(-325, 348, 0.5, 1)
 
 func _on_Clicker_button_down() -> void:
 	hookVelocity -= 0.5

@@ -73,7 +73,6 @@ func _process(delta: float) -> void:
 			velocity.x = auto_x + input_x
 			velocity.y = auto_y + input_y
 		else:
-			
 			hook_time = 0.0
 			if not is_input:
 				velocity.x = 0
