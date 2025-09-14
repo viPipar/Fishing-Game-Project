@@ -76,9 +76,8 @@ func caught_fish() -> void:
 	}
 	global_fishing.emit_signal("fishing_result", true, payload)
 	global_fishing.coin += 4
-
-	
-	get_tree().paused = false
+	global_fishing.caught = true
+	global_fishing.release = true
 
 
 func lost_fish() -> void:

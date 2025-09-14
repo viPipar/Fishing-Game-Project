@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bn0ymvppucc3e"]
+[gd_scene load_steps=20 format=3 uid="uid://c7kss3oi84gi0"]
 
 [ext_resource type="Script" uid="uid://bij27x3ymqeyp" path="res://fishing/sea scene/sea merah.gd" id="1_4o43e"]
 [ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="2_5vbuc"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dojbsq82xmrjq" path="res://fishing/background/bg4t.png" id="11_6qisk"]
 [ext_resource type="Texture2D" uid="uid://bgfk55n3gop45" path="res://fishing/background/bg4s.png" id="12_nve83"]
 [ext_resource type="Texture2D" uid="uid://dggrt8sung050" path="res://fishing/background/kalo digabungin gini.png" id="14_hj5ja"]
+[ext_resource type="PackedScene" path="res://fishing/fish_scene/ikan_jantung.tscn" id="15_hj5ja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fnbt"]
 size = Vector2(2088, 1669)
@@ -96,7 +97,7 @@ texture = ExtResource("12_nve83")
 
 [node name="World Limit" type="StaticBody2D" parent="."]
 position = Vector2(-11, -583)
-collision_layer = 3
+collision_layer = 5
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Limit"]
@@ -118,3 +119,6 @@ shape = SubResource("RectangleShape2D_ylwuy")
 [node name="KaloDigabunginGini" type="Sprite2D" parent="."]
 position = Vector2(-12, -2451)
 texture = ExtResource("14_hj5ja")
+
+[node name="ikan_jantung" parent="." instance=ExtResource("15_hj5ja")]
+position = Vector2(0.999998, 11334)

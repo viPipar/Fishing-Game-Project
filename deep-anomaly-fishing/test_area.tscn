@@ -1,15 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://stfkdviuvdg5"]
+[gd_scene load_steps=13 format=3 uid="uid://stfkdviuvdg5"]
 
 [ext_resource type="PackedScene" uid="uid://ddg13kyuwe7uw" path="res://fishing/fish_scene/ikan_angler.tscn" id="2_vt2yd"]
 [ext_resource type="PackedScene" uid="uid://ddhr6fh841trt" path="res://fishing/fish_scene/ikan_nemo.tscn" id="3_xdpsd"]
 [ext_resource type="PackedScene" uid="uid://ck5fvd5c4miw3" path="res://fishing/fish_scene/ikan_tuna.tscn" id="4_6ii2q"]
 [ext_resource type="PackedScene" uid="uid://brtyb3oanvqeg" path="res://fishing/fish_scene/ikan_liawo.tscn" id="5_vt2yd"]
-[ext_resource type="PackedScene" uid="uid://cphra3p67al7h" path="res://fishing/fish_scene/ikan_shark.tscn" id="7_6ii2q"]
-[ext_resource type="PackedScene" uid="uid://5nn8sji48e10" path="res://fishing/fish_scene/ikan_belut.tscn" id="8_7aw3l"]
-[ext_resource type="PackedScene" uid="uid://w88lcc4gcjp4" path="res://fishing/fish_scene/ikan_plongo.tscn" id="9_7aw3l"]
-[ext_resource type="PackedScene" uid="uid://bt03qvqxku83d" path="res://fishing/fish_scene/ikan_aneh.tscn" id="10_ry2yl"]
-[ext_resource type="PackedScene" uid="uid://dc8xvytx4ulxc" path="res://fishing/fish_scene/ikan_biru.tscn" id="11_1ro0w"]
-[ext_resource type="PackedScene" uid="uid://c02m22ipakjc6" path="res://fishing/fish_scene/ikan_jantung.tscn" id="11_4qb3o"]
+[ext_resource type="PackedScene" path="res://fishing/fish_scene/ikan_shark.tscn" id="7_6ii2q"]
+[ext_resource type="PackedScene" path="res://fishing/fish_scene/ikan_plongo.tscn" id="9_7aw3l"]
+[ext_resource type="PackedScene" path="res://fishing/fish_scene/ikan_aneh.tscn" id="10_ry2yl"]
+[ext_resource type="PackedScene" path="res://fishing/fish_scene/ikan_belut.tscn" id="11_1ro0w"]
+[ext_resource type="PackedScene" path="res://fishing/fish_scene/ikan_jantung.tscn" id="11_4qb3o"]
 [ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="11_vj3ng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfpkf"]
@@ -21,7 +20,7 @@ size = Vector2(253, 20)
 [node name="Node2D" type="Node2D"]
 
 [node name="ikan_angler" parent="." instance=ExtResource("2_vt2yd")]
-position = Vector2(1829, 2325)
+position = Vector2(593, 1230)
 scale = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -32,10 +31,10 @@ position = Vector2(961, 0)
 shape = SubResource("RectangleShape2D_rfpkf")
 
 [node name="ikan_nemo" parent="." instance=ExtResource("3_xdpsd")]
-position = Vector2(2414, 1855)
+position = Vector2(1178, 760)
 
 [node name="ikan_tuna" parent="." instance=ExtResource("4_6ii2q")]
-position = Vector2(2437, 1629)
+position = Vector2(1201, 534)
 
 [node name="DeathArea" type="Area2D" parent="." groups=["Deaths"]]
 position = Vector2(16, 28)
@@ -45,25 +44,25 @@ position = Vector2(187, 23)
 shape = SubResource("RectangleShape2D_gwgse")
 
 [node name="ikan_liawo" parent="." instance=ExtResource("5_vt2yd")]
-position = Vector2(1557, 2089)
+position = Vector2(321, 994)
 
 [node name="ikan_shark" parent="." instance=ExtResource("7_6ii2q")]
 position = Vector2(720, 490)
 
-[node name="ikan_belut" parent="." instance=ExtResource("8_7aw3l")]
-position = Vector2(2886, 1468)
+[node name="ikan_belut" parent="." instance=ExtResource("11_1ro0w")]
+position = Vector2(1650, 373)
 
 [node name="ikan_plongo" parent="." instance=ExtResource("9_7aw3l")]
-position = Vector2(2492, 2157)
+position = Vector2(1256, 1062)
 
 [node name="ikan_aneh" parent="." instance=ExtResource("10_ry2yl")]
-position = Vector2(2740, 1982)
+position = Vector2(1504, 887)
 
 [node name="ikan_jantung" parent="." instance=ExtResource("11_4qb3o")]
-position = Vector2(2344, 2300)
+position = Vector2(1108, 1205)
 
 [node name="ikan_dori" parent="." instance=ExtResource("11_1ro0w")]
-position = Vector2(1810, 1581)
+position = Vector2(574, 486)
 
 [node name="KailPancing" parent="." instance=ExtResource("11_vj3ng")]
 position = Vector2(814, 109)

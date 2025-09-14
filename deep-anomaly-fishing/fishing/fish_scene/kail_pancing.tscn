@@ -104,10 +104,11 @@ func _process(delta: float) -> void:
 		reactivate_hook()
 
 	# ===== new input: aktifkan DetachArea sementara dan nonaktifkan HookArea sementara =====
-	if Input.is_action_just_pressed(\"detach\"):
+	if global_fishing.release == true:
 		# jangan izinkan overlapping detach action jika sudah berjalan
 		if not _detach_in_progress:
 			start_detach_sequence()
+			global_fishing.release = false
 
 	move_and_slide()
 	queue_redraw()  # update garis setiap frame
@@ -254,7 +255,7 @@ size = Vector2(46, 54)
 size = Vector2(1014, 894)
 
 [node name="KailPancing" type="CharacterBody2D"]
-collision_mask = 2
+collision_mask = 4
 script = SubResource("GDScript_wrv4s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

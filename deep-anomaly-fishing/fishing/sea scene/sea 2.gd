@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_six.tscn")
 		
 	if Input.is_action_pressed("debug"):
-		global_fishing.hooking = true
+
 		global_fishing.coin += 10

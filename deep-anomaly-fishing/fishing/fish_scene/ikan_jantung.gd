@@ -159,6 +159,10 @@ func _hook_detach() -> void:
 	# note: jangan langsung enable mouth collision di sini,
 	# caller (mis. Detach handler) bisa mengontrol kapan re-enable via _reattach_timer.
 	_enable_mouth_collision_deferred()
+	if global_fishing.caught == true:
+		queue_free()
+		global_fishing.caught = false
+		global_fishing.coin +=999
 	shake_timer = 0.0
 
 func force_unhook() -> void:

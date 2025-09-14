@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cu468vs53y68q"]
+[gd_scene load_steps=22 format=3 uid="uid://dajspdadj3b57"]
 
 [ext_resource type="Script" uid="uid://dnx7ads25rp83" path="res://fishing/sea scene/sea 2.gd" id="1_1aw3s"]
 [ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="2_0l2mo"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://3qcp6o6hubcn" path="res://fishing/background/bg1.png" id="9_7rqkl"]
 [ext_resource type="Texture2D" uid="uid://vp5og205do7y" path="res://fishing/background/bg1t.png" id="10_4ucqx"]
 [ext_resource type="Texture2D" uid="uid://dggrt8sung050" path="res://fishing/background/kalo digabungin gini.png" id="13_xnr5t"]
+[ext_resource type="PackedScene" uid="uid://ck5fvd5c4miw3" path="res://fishing/fish_scene/ikan_tuna.tscn" id="14_ykw5j"]
+[ext_resource type="PackedScene" path="res://fishing/fish_scene/ikan_shark.tscn" id="15_5j8r8"]
+[ext_resource type="PackedScene" uid="uid://brtyb3oanvqeg" path="res://fishing/fish_scene/ikan_liawo.tscn" id="16_7rqkl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fnbt"]
 size = Vector2(2088, 1765)
@@ -29,19 +32,18 @@ size = Vector2(2684.5, 127.375)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4qej"]
 size = Vector2(2088, 38)
 
-[node name="Sea2" type="Node2D"]
+[node name="Sea3" type="Node2D"]
 script = ExtResource("1_1aw3s")
 
 [node name="KailPancing" parent="." groups=["Kail"] instance=ExtResource("2_0l2mo")]
 z_index = 3
 position = Vector2(2, -2279)
-collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="KailPancing"]
 limit_left = -960
 limit_top = -3990
 limit_right = 959
-limit_bottom = 2905
+limit_bottom = 6087
 
 [node name="MinigameLayer" type="CanvasLayer" parent="."]
 physics_interpolation_mode = 2
@@ -94,7 +96,7 @@ texture = ExtResource("10_4ucqx")
 
 [node name="World Limit" type="StaticBody2D" parent="."]
 position = Vector2(-11, -583)
-collision_layer = 3
+collision_layer = 5
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Limit"]
@@ -125,3 +127,18 @@ shape = SubResource("RectangleShape2D_p4qej")
 [node name="KaloDigabunginGini" type="Sprite2D" parent="."]
 position = Vector2(-21, -2404)
 texture = ExtResource("13_xnr5t")
+
+[node name="ikan_tuna" parent="." instance=ExtResource("14_ykw5j")]
+position = Vector2(13, 5239)
+
+[node name="ikan_tuna2" parent="." instance=ExtResource("14_ykw5j")]
+position = Vector2(-146, 4640)
+
+[node name="ikan_shark" parent="." instance=ExtResource("15_5j8r8")]
+position = Vector2(142, 5710)
+
+[node name="ikan_liawo" parent="." instance=ExtResource("16_7rqkl")]
+position = Vector2(-97, 4120)
+
+[node name="ikan_liawo2" parent="." instance=ExtResource("16_7rqkl")]
+position = Vector2(111, 3478)
