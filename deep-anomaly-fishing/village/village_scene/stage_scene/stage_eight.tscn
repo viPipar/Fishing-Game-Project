@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dtdw2oau3ymub"]
+[gd_scene load_steps=38 format=3 uid="uid://dtdw2oau3ymub"]
 
 [ext_resource type="Script" uid="uid://clyc7vt3hnl43" path="res://village/village_scene/stage_scene/stage_eight.gd" id="1_i6rth"]
 [ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_pfhjv"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://cyxwwrgkwh0nj" path="res://village/village_asset/animation/pact_animation/24.png" id="28_w7iqc"]
 [ext_resource type="Texture2D" uid="uid://c3cnwnrsjpayx" path="res://village/village_asset/animation/pact_animation/25.png" id="29_8v7de"]
 [ext_resource type="Texture2D" uid="uid://wdyu50ynw26a" path="res://village/village_asset/animation/pact_animation/26.png" id="30_nwhsf"]
+[ext_resource type="AudioStream" uid="uid://esey1fsy567p" path="res://fishing/music/scary-horror-music-351315.mp3" id="31_so7gv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqasw"]
 
@@ -182,7 +183,7 @@ script = ExtResource("1_i6rth")
 
 [node name="MC" parent="." instance=ExtResource("2_i6rth")]
 z_index = 1
-position = Vector2(1088, -422)
+position = Vector2(-714, 1370)
 
 [node name="area_patung" type="Area2D" parent="."]
 
@@ -243,6 +244,9 @@ animation = &"animated"
 frame = 25
 frame_progress = 1.0
 centered = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_so7gv")
 
 [connection signal="body_shape_entered" from="area_patung" to="." method="_on_area_patung_body_shape_entered"]
 [connection signal="body_shape_entered" from="area_rumah" to="." method="_on_area_rumah_body_shape_entered"]

@@ -396,3 +396,5 @@ sprite_frames = SubResource("SpriteFrames_njf58")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.206654
+
+[node name="Music" type="AudioStreamPlayer" parent="."]

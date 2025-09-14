@@ -1,4 +1,5 @@
 extends Node2D
+@onready var music: AudioStreamPlayer = $Music
 
 var resource = preload("res://dialogue/stage_2.dialogue")
 
@@ -6,6 +7,8 @@ var resource = preload("res://dialogue/stage_2.dialogue")
 func _ready() -> void:
 	$area_patung.monitoring = false
 	$quest_guide/Panel/quest_text.play("cementary")
+	music.stream.loop = true
+	music.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

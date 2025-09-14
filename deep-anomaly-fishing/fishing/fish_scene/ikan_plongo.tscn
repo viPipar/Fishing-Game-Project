@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://w88lcc4gcjp4"]
 
-[ext_resource type="Script" uid="uid://dj7fldfm225gf" path="res://fishing/fish_scene/ikan_plongo.gd" id="1_eyvx5"]
+[ext_resource type="Script" uid="uid://v14uoe04rnj4" path="res://fishing/fish_scene/ikan_plongo.gd" id="1_eyvx5"]
 [ext_resource type="Texture2D" uid="uid://pfktp5vxyn4b" path="res://fishing/fishing_asset/sprite/ikan_plongo/qwpo.png" id="1_namw2"]
 [ext_resource type="Texture2D" uid="uid://bu3gsguxsxu0x" path="res://fishing/fishing_asset/sprite/ikan_plongo/qwpo1.png" id="2_eyvx5"]
 [ext_resource type="Texture2D" uid="uid://b3n0n70qvw5yf" path="res://fishing/fishing_asset/sprite/ikan_plongo/qwpo2.png" id="3_6ema3"]

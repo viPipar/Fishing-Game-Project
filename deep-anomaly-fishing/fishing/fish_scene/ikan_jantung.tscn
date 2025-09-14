@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c02m22ipakjc6"]
 
 [ext_resource type="Texture2D" uid="uid://t8s4o2v60837" path="res://fishing/fishing_asset/sprite/jantung/jantung.png" id="1_n6fig"]
-[ext_resource type="Script" uid="uid://3re5d810wgdg" path="res://fishing/fish_scene/ikan_jantung.gd" id="1_umi83"]
+[ext_resource type="Script" uid="uid://xkgjcatmcyii" path="res://fishing/fish_scene/ikan_jantung.gd" id="1_umi83"]
 [ext_resource type="Texture2D" uid="uid://bshob3a4f17v2" path="res://fishing/fishing_asset/sprite/jantung/jantung1.png" id="2_umi83"]
 [ext_resource type="Texture2D" uid="uid://dpkg00ugydf66" path="res://fishing/fishing_asset/sprite/jantung/jantung2.png" id="3_leqfc"]
 [ext_resource type="Texture2D" uid="uid://crlr02q7pjjdw" path="res://fishing/fishing_asset/sprite/jantung/jantung3.png" id="4_iguqk"]

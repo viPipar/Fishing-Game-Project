@@ -1,9 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://oaiatosoqqxi"]
+[gd_scene load_steps=9 format=3 uid="uid://oaiatosoqqxi"]
 
 [ext_resource type="Script" uid="uid://cpte3omfxk75g" path="res://main_menu.gd" id="1_jv72w"]
 [ext_resource type="Texture2D" uid="uid://ddohw7eh4ek6g" path="res://ui/ui_asset/main.png" id="2_7hhhf"]
 [ext_resource type="Texture2D" uid="uid://dis12w076ys5r" path="res://ui/ui_asset/bub.png" id="3_kghir"]
 [ext_resource type="Texture2D" uid="uid://cw2sov7okrlgj" path="res://ui/ui_asset/text.png" id="4_nwgli"]
+[ext_resource type="AudioStream" uid="uid://eh141xc5qo3v" path="res://fishing/music/slow-piano-cinematic-mood-329858.mp3" id="5_7hhhf"]
+
+[sub_resource type="Animation" id="Animation_3klbn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bubel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_6snrp"]
 resource_name = "bubble"
@@ -20,21 +36,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1080)]
-}
-
-[sub_resource type="Animation" id="Animation_3klbn"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bubel:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6jbs8"]
@@ -89,6 +90,10 @@ offset_top = 584.0
 offset_right = 837.0
 offset_bottom = 624.0
 scale = Vector2(8.72844, 2.07684)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7hhhf")
+volume_db = 4.685
 
 [connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="exit_game" to="." method="_on_exit_game_pressed"]

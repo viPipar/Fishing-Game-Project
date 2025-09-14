@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-@onready var sprite = $AnimatedSprite2D
-@export var speed = 200
+@onready var walk: AudioStreamPlayer = $Walk
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var speed: float = 1000.0
 
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO
 	var anim = "idle"
 
@@ -29,6 +30,15 @@ func _physics_process(_delta):
 
 	# Mainkan animasi sesuai arah
 	sprite.play(anim)
-	if global_village.mc_movement==true:
+
+	# ======== WALK SOUND LOGIC ========
+	if velocity != Vector2.ZERO:
+		if not walk.playing:
+			walk.play()
+	else:
+		if walk.playing:
+			walk.stop()
+	# ==================================
+
+	if global_village.mc_movement:
 		move_and_slide()
-	else : pass

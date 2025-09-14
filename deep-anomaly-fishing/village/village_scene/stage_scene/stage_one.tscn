@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cmb2gsyra3482"]
+[gd_scene load_steps=41 format=3 uid="uid://cmb2gsyra3482"]
 
 [ext_resource type="Script" uid="uid://dh21187yfxup3" path="res://village/village_scene/stage_scene/stage_one.gd" id="1_jxeqa"]
 [ext_resource type="PackedScene" uid="uid://borfx4e7ved6t" path="res://village/village_scene/home.tscn" id="1_q7hwh"]
@@ -30,6 +30,8 @@
 [ext_resource type="Texture2D" uid="uid://cylayut7vlp2b" path="res://village/village_asset/animation/ramuan_animation/22.png" id="28_lwvsx"]
 [ext_resource type="Texture2D" uid="uid://dmvdb5jhygwcq" path="res://village/village_asset/animation/ramuan_animation/23.png" id="29_62nwm"]
 [ext_resource type="Texture2D" uid="uid://blt43cq2l0jpq" path="res://village/village_asset/animation/ramuan_animation/24.png" id="30_7273g"]
+[ext_resource type="AudioStream" uid="uid://bcjovmwtm22k" path="res://fishing/music/guitar-slow-emotion-330121.mp3" id="31_8j6d1"]
+[ext_resource type="AudioStream" uid="uid://dwr7fhyjjh3nd" path="res://fishing/audio/door-creaking-sound-effect-241381.mp3" id="32_nm3wl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7hwh"]
 
@@ -250,6 +252,7 @@ autoplay = "blink"
 
 [node name="MC" parent="." instance=ExtResource("2_jxeqa")]
 position = Vector2(1615, 1002)
+speed = 1000.0
 
 [node name="area_keluar_kamar" type="Area2D" parent="."]
 visible = false
@@ -270,6 +273,13 @@ animation = &"animation"
 frame = 23
 frame_progress = 1.0
 centered = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_8j6d1")
+
+[node name="Door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("32_nm3wl")
+volume_db = 2.811
 
 [connection signal="pressed" from="control/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="control/medicine_panel/medicine_yes_button" to="." method="_on_medicine_yes_button_pressed"]

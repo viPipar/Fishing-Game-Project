@@ -1,4 +1,5 @@
 extends Node2D
+@onready var music: AudioStreamPlayer = $Music
 
 var resource = preload("res://dialogue/stage_3.dialogue")
 var resource1 = preload("res://dialogue/stage_interlude_5.dialogue")
@@ -16,6 +17,9 @@ func _ready() -> void:
 		DialogueManager.show_dialogue_balloon(resource2,"stage_interlude_7_1")
 	await global_village.dialogue_finished
 	$quest_guide/Panel/quest_text.play("harbour")
+	
+	music.stream.loop = true
+	music.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

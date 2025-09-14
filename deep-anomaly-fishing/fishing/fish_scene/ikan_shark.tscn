@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cphra3p67al7h"]
 
 [ext_resource type="Texture2D" uid="uid://dytcwi0eqc2b1" path="res://fishing/fishing_asset/sprite/shark/awwk1.png" id="1_3w8aw"]
-[ext_resource type="Script" uid="uid://dxca1trwmeoyb" path="res://fishing/fish_scene/ikan_shark.gd" id="1_lv81n"]
+[ext_resource type="Script" uid="uid://4015ls68ngbm" path="res://fishing/fish_scene/ikan_shark.gd" id="1_lv81n"]
 [ext_resource type="Texture2D" uid="uid://dwlg26afl6jj0" path="res://fishing/fishing_asset/sprite/shark/awwk2.png" id="2_lv81n"]
 [ext_resource type="Texture2D" uid="uid://dp7pgvk72pnaa" path="res://fishing/fishing_asset/sprite/shark/awwk3.png" id="3_mrtqh"]
 [ext_resource type="Texture2D" uid="uid://b5hfnw47vfhof" path="res://fishing/fishing_asset/sprite/shark/awwk4.png" id="4_g8ya5"]

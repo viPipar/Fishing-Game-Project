@@ -1,4 +1,5 @@
 extends Node2D
+@onready var music: AudioStreamPlayer = $Music
 
 var resource = preload("res://dialogue/stage_6.dialogue")
 # Called when the node enters the scene tree for the first time.
@@ -6,6 +7,8 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(resource,"stage_6_1")
 	await global_village.dialogue_finished
 	$quest_guide/Panel/quest_text.play("home")
+	music.stream.loop = true
+	music.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

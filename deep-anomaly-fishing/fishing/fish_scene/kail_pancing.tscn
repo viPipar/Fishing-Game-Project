@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://3siw6cp2pi75"]
+[gd_scene load_steps=14 format=3 uid="uid://3siw6cp2pi75"]
 
+[ext_resource type="AudioStream" uid="uid://dhhnrosaf6f5e" path="res://fishing/audio/water-bubbles-257594.mp3" id="2_sm5bq"]
 [ext_resource type="Texture2D" uid="uid://n77qqx507bub" path="res://fishing/fishing_asset/sprite/Idle.png" id="2_xj2du"]
+[ext_resource type="AudioStream" uid="uid://cojfw7wfaxyd3" path="res://fishing/music/sea-traditional-japanese-song-178353.mp3" id="3_ywbva"]
 
 [sub_resource type="GDScript" id="GDScript_wrv4s"]
 script/source = "extends CharacterBody2D
@@ -28,6 +30,8 @@ var _detach_in_progress: bool = false
 # Detach area (di-activate / di-activate lewat input \"detach\")
 @onready var detach_area: Area2D = $DetachArea
 @onready var detach_shape: CollisionShape2D = $DetachArea/CollisionShape2D
+@onready var movesfx: AudioStreamPlayer = $Audio/Move
+@onready var music: AudioStreamPlayer = $Music
 
 # ======= LIFE CYCLE =======
 func _ready() -> void:
@@ -43,6 +47,13 @@ func _ready() -> void:
 		detach_area.visible = false
 	if is_instance_valid(detach_shape):
 		detach_shape.disabled = true
+		
+	movesfx.stream.loop = true
+	movesfx.play()
+	
+	music.stream.loop = true
+	music.play()
+
 
 func _process(delta: float) -> void:
 	is_input = false
@@ -64,6 +75,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed(\"left\"):
 			velocity.x = -MOVE_SPEED
 			is_input = true
+			
 
 	# ===== gerakan otomatis saat kail menempel ikan =====
 		if is_instance_valid(detect_area):
@@ -285,3 +297,11 @@ shape = SubResource("RectangleShape2D_sm5bq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetachArea"]
 position = Vector2(5, 10)
 shape = SubResource("RectangleShape2D_wrv4s")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Move" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("2_sm5bq")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ywbva")

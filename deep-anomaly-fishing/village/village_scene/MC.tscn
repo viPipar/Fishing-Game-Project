@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://doybfyiltbtpj"]
+[gd_scene load_steps=39 format=3 uid="uid://doybfyiltbtpj"]
 
 [ext_resource type="Script" uid="uid://bfcqsqq1gjy7e" path="res://village/village_script/mc.gd" id="1_d52cc"]
 [ext_resource type="Texture2D" uid="uid://c7t1dgn46xc7f" path="res://village/village_asset/MC_Idle.png" id="1_l11ac"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0e74qswhmi8j" path="res://village/village_asset/MC_Move_Down.png" id="2_scccn"]
 [ext_resource type="Texture2D" uid="uid://1avfib8fwaoj" path="res://village/village_asset/MC_Move_Right.png" id="3_scccn"]
 [ext_resource type="Texture2D" uid="uid://1c2kk77aunvm" path="res://village/village_asset/MC_Move_Up.png" id="5_d52cc"]
+[ext_resource type="AudioStream" uid="uid://bu4flrsfaq4ri" path="res://fishing/audio/mc_steps_sound (1).mp3" id="7_x352g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d52cc"]
 atlas = ExtResource("1_l11ac")
@@ -243,7 +244,6 @@ animations = [{
 [node name="MC" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_d52cc")
-speed = 900
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 3.8147e-06)
@@ -267,3 +267,7 @@ drag_left_margin = 0.1
 drag_top_margin = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
+
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_x352g")
+volume_db = 6.699

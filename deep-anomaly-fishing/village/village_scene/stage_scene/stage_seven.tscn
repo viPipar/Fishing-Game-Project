@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6ukrpl2hj6xm"]
+[gd_scene load_steps=10 format=3 uid="uid://b6ukrpl2hj6xm"]
 
 [ext_resource type="Script" uid="uid://ysmt1xyuthbh" path="res://village/village_scene/stage_scene/stage_seven.gd" id="1_7qkto"]
 [ext_resource type="PackedScene" uid="uid://borfx4e7ved6t" path="res://village/village_scene/home.tscn" id="1_lcy4c"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_7qkto"]
 [ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="4_jynvy"]
+[ext_resource type="AudioStream" uid="uid://eh141xc5qo3v" path="res://fishing/music/slow-piano-cinematic-mood-329858.mp3" id="5_hkdsw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jynvy"]
 
@@ -77,5 +78,8 @@ libraries = {
 autoplay = "blink"
 
 [node name="quest_guide" parent="." instance=ExtResource("4_jynvy")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hkdsw")
 
 [connection signal="body_shape_entered" from="area_kamar" to="." method="_on_area_kamar_body_shape_entered"]

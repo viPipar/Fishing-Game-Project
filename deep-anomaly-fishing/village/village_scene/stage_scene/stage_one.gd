@@ -1,4 +1,6 @@
 extends Node2D
+@onready var music: AudioStreamPlayer = $Music
+@onready var door: AudioStreamPlayer = $Door
 
 var medicine = 0
 var resource = preload("res://dialogue/stage_1.dialogue")
@@ -15,6 +17,8 @@ func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(resource, "stage_1_1")
 	await global_village.dialogue_finished
 	$quest_guide/Panel/quest_text.play("medicine")
+	music.stream.loop = true
+	music.play()
 #Buat obat
 func _on_area_medicine_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.name == "MC":
@@ -69,6 +73,7 @@ func _on_leave_body_exited(body: Node2D) -> void:
 		$control/Panel.visible=false
 	else : pass
 func _on_button_pressed() -> void:
+	door.play()
 	SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_two.tscn")
 
 
