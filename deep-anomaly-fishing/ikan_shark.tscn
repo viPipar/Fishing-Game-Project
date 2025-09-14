@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://cphra3p67al7h"]
+
+[ext_resource type="Texture2D" uid="uid://dytcwi0eqc2b1" path="res://fishing/fishing_asset/sprite/shark/awwk1.png" id="1_3w8aw"]
+[ext_resource type="Script" uid="uid://dxca1trwmeoyb" path="res://ikan_shark.gd" id="1_lv81n"]
+[ext_resource type="Texture2D" uid="uid://dwlg26afl6jj0" path="res://fishing/fishing_asset/sprite/shark/awwk2.png" id="2_lv81n"]
+[ext_resource type="Texture2D" uid="uid://dp7pgvk72pnaa" path="res://fishing/fishing_asset/sprite/shark/awwk3.png" id="3_mrtqh"]
+[ext_resource type="Texture2D" uid="uid://b5hfnw47vfhof" path="res://fishing/fishing_asset/sprite/shark/awwk4.png" id="4_g8ya5"]
+[ext_resource type="Texture2D" uid="uid://c5shae1cob5g6" path="res://fishing/fishing_asset/sprite/shark/awwk.png" id="5_bg7bv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs5bv"]
+size = Vector2(888, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0crs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3w8aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lv81n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mrtqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g8ya5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bg7bv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gap8"]
+radius = 35.0571
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ulc85"]
+radius = 28.0713
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rwn5"]
+size = Vector2(750, 197)
+
+[node name="ikan_shark" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_lv81n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19, 34)
+shape = SubResource("RectangleShape2D_fs5bv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p0crs")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.238342
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(3, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+position = Vector2(369, 85)
+shape = SubResource("CircleShape2D_4gap8")
+
+[node name="DeathArea" type="Area2D" parent="AnimatedSprite2D" groups=["Deaths"]]
+position = Vector2(352, 98)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/DeathArea"]
+shape = SubResource("CircleShape2D_ulc85")
+
+[node name="DetectArea" type="Area2D" parent="." groups=["Ikan"]]
+position = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+position = Vector2(70, 41.5)
+shape = SubResource("RectangleShape2D_1rwn5")

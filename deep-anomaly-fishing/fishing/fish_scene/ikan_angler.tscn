@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddg13kyuwe7uw"]
+[gd_scene load_steps=12 format=3 uid="uid://ddg13kyuwe7uw"]
 
-[ext_resource type="Script" uid="uid://clt5tacpdjxqn" path="res://fishing/fishing_asset/fish_scene/ikan_angler.gd" id="1_csrpr"]
+[ext_resource type="Script" uid="uid://clt5tacpdjxqn" path="res://fishing/fish_scene/ikan_angler.gd" id="1_csrpr"]
 [ext_resource type="Texture2D" uid="uid://g35ked6p26k3" path="res://fishing/fishing_asset/sprite/angler/anglerfish1.png" id="2_8xlav"]
 [ext_resource type="Texture2D" uid="uid://cyfpoqgo1i08w" path="res://fishing/fishing_asset/sprite/angler/anglerfish2.png" id="3_qmp10"]
 [ext_resource type="Texture2D" uid="uid://bqof5kqww5opu" path="res://fishing/fishing_asset/sprite/angler/anglerfish3.png" id="4_x30dp"]
@@ -36,7 +36,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhgbb"]
 radius = 87.5728
 
-[node name="ikan_angler" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_csrpr"]
+radius = 85.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqwgw"]
+size = Vector2(397, 203)
+
+[node name="ikan_angler" type="CharacterBody2D" groups=["Ikan"]]
 script = ExtResource("1_csrpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -54,3 +60,15 @@ frame_progress = 0.382721
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
 position = Vector2(206, -10)
 shape = SubResource("CircleShape2D_bhgbb")
+
+[node name="DeathArea" type="Area2D" parent="AnimatedSprite2D" groups=["Deaths"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/DeathArea"]
+position = Vector2(228, 0)
+shape = SubResource("CircleShape2D_csrpr")
+
+[node name="DetectArea" type="Area2D" parent="." groups=["Ikan"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+position = Vector2(-83.5, 2.5)
+shape = SubResource("RectangleShape2D_iqwgw")

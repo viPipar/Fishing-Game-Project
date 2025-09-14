@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddhr6fh841trt"]
+[gd_scene load_steps=11 format=3 uid="uid://ddhr6fh841trt"]
 
-[ext_resource type="Script" uid="uid://ckw0g5ux2lfpj" path="res://fishing/fishing_asset/fish_scene/ikan_nemo.gd" id="1_hb6qx"]
+[ext_resource type="Script" uid="uid://ckw0g5ux2lfpj" path="res://fishing/fish_scene/ikan_nemo.gd" id="1_hb6qx"]
 [ext_resource type="Texture2D" uid="uid://cnmcatv1afvb6" path="res://fishing/fishing_asset/sprite/nemo/nemo.png" id="2_40ptp"]
 [ext_resource type="Texture2D" uid="uid://cncbvt0puj5g1" path="res://fishing/fishing_asset/sprite/nemo/nemo2.png" id="3_c6lnf"]
 [ext_resource type="Texture2D" uid="uid://ceepl5l5nu1b0" path="res://fishing/fishing_asset/sprite/nemo/nemo1.png" id="4_ollk3"]
@@ -36,11 +36,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hb6qx"]
 radius = 230.217
 
-[node name="ikan_nemo" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huwp8"]
+size = Vector2(1720, 1220)
+
+[node name="ikan_nemo" type="CharacterBody2D" groups=["Ikan"]]
 position = Vector2(1571, 873)
-scale = Vector2(-0.2, 0.2)
+scale = Vector2(0.2, 0.2)
 collision_mask = 2
 script = ExtResource("1_hb6qx")
+adjust = Vector2(0, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-62.5, 32.5002)
@@ -59,3 +63,9 @@ position = Vector2(1.52588e-05, 1.99994)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
 position = Vector2(980, 10)
 shape = SubResource("CircleShape2D_hb6qx")
+
+[node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(155, 50)
+shape = SubResource("RectangleShape2D_huwp8")
