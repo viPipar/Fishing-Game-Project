@@ -48,6 +48,7 @@ radius = 37.2156
 size = Vector2(737.333, 70)
 
 [node name="ikan_belut" type="CharacterBody2D"]
+process_mode = 3
 scale = Vector2(0.3, 0.3)
 collision_mask = 2
 script = ExtResource("1_dqdgu")

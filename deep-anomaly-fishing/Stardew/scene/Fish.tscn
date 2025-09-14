@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2bir3b1u2mkj"]
+[gd_scene load_steps=4 format=3 uid="uid://b2bir3b1u2mkj"]
 
 [ext_resource type="Texture2D" uid="uid://b5hdiff2wj2im" path="res://Stardew/assets/Fish.png" id="1"]
 [ext_resource type="Script" uid="uid://bcr2v3a2srdli" path="res://Stardew/scene/Fish.gd" id="2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ty0fd"]
+radius = 6.0
 
 [node name="Fish" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("2")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["fish_target"]]
+collision_layer = 524288
+collision_mask = 524288
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(0.0333195, 5.40162, 5.26929, 0.0812044, 0.0333195, -5.22232, -5.13509, 0.0305338)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ty0fd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1")

@@ -33,12 +33,26 @@ script = ExtResource("1_p4qej")
 
 [node name="KailPancing" parent="." groups=["Kail"] instance=ExtResource("1_wiq23")]
 z_index = 3
+collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="KailPancing"]
 limit_left = -960
 limit_top = -551
 limit_right = 959
 limit_bottom = 2905
+
+[node name="MinigameLayer" type="CanvasLayer" parent="."]
+physics_interpolation_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MinigameLayer"]
+modulate = Color(1, 1, 1, 0.270588)
+offset_right = 1933.0
+offset_bottom = 1098.0
+color = Color(0, 0, 0, 1)
+
+[node name="Stardew" parent="MinigameLayer" instance=ExtResource("12_1fnbt")]
+position = Vector2(966, 550)
+scale = Vector2(0.648907, 0.648907)
 
 [node name="Background 3" type="Sprite2D" parent="."]
 position = Vector2(0, 7774)
@@ -76,6 +90,8 @@ position = Vector2(163, 2352)
 
 [node name="World Limit" type="StaticBody2D" parent="."]
 position = Vector2(-11, -583)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Limit"]
 position = Vector2(-8, 9)
@@ -99,16 +115,3 @@ position = Vector2(-7, 2920)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage 1"]
 position = Vector2(-8, 9)
 shape = SubResource("RectangleShape2D_p4qej")
-
-[node name="MinigameLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="MinigameLayer"]
-modulate = Color(1, 1, 1, 0.396078)
-offset_right = 1932.0
-offset_bottom = 1093.0
-color = Color(0, 0, 0, 1)
-
-[node name="Stardew" parent="MinigameLayer" instance=ExtResource("12_1fnbt")]
-position = Vector2(960, 540)
-scale = Vector2(0.648907, 0.648907)

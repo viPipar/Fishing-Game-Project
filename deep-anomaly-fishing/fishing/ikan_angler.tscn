@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://chqn7a0cg5cu7"]
+[gd_scene load_steps=10 format=3 uid="uid://bho81hpnf1fnv"]
 
-[ext_resource type="Script" uid="uid://2b4vapwc1oc0" path="res://fishing/ikan_angler.gd" id="1_2yn8m"]
+[ext_resource type="Script" path="res://fishing/ikan_angler.gd" id="1_2yn8m"]
 [ext_resource type="Texture2D" uid="uid://cr6wgmbxxbvbq" path="res://fishing/fishing_asset/sprite/angler/Walk.png" id="2_3kcqo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e38mq"]
@@ -45,6 +45,7 @@ animations = [{
 size = Vector2(11, 11.3333)
 
 [node name="ikan_angler" type="CharacterBody2D"]
+process_mode = 3
 position = Vector2(-17, -18)
 scale = Vector2(3, 3)
 script = ExtResource("1_2yn8m")

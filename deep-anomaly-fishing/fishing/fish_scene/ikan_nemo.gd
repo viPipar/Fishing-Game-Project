@@ -83,7 +83,10 @@ func _physics_process(delta: float) -> void:
 			if area.is_in_group("Deaths"):
 				queue_free()
 				return
-
+	
+	if global_fishing.release == true:
+		_hook_detach()
+	
 func _update_facing(x_dir: float) -> void:
 	if x_dir < 0 and facing_dir != -1:
 		facing_dir = -1
@@ -132,9 +135,28 @@ func _on_MouthArea_area_exited(area: Area2D) -> void:
 func _hook_detach() -> void:
 	hooked = false
 	hook_ref = null
-	attach_offset = Vector2.ZERO
-	_enable_mouth_collision_deferred()
-	shake_timer = 0.0
-
+	await get_tree().create_timer(2.0).timeout
+	reset_to_initial()
+	
 func force_unhook() -> void:
 	_hook_detach()
+	
+func reset_to_initial() -> void:
+	# reset variabel state
+	hooked = false
+	hook_ref = null
+	attach_offset = Vector2.ZERO
+	velocity = Vector2.ZERO
+	shake_timer = 0.0
+	rotation_degrees = default_rotation_degrees
+	facing_dir = 1
+	_apply_facing()
+
+	# reset patrol
+	target_position = patrol_points[current_point_index]
+
+	# kembalikan posisi ke spawn
+	global_position = start_position
+
+	# pastikan MouthArea aktif lagi
+	_enable_mouth_collision_deferred()

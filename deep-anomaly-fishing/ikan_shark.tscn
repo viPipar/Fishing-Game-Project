@@ -43,6 +43,7 @@ radius = 28.0713
 size = Vector2(750, 197)
 
 [node name="ikan_shark" type="CharacterBody2D"]
+process_mode = 3
 collision_mask = 2
 script = ExtResource("1_lv81n")
 

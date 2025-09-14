@@ -40,6 +40,7 @@ radius = 30.0666
 size = Vector2(772, 195)
 
 [node name="ikan_tuna" type="CharacterBody2D" groups=["Ikan"]]
+process_mode = 3
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
 script = ExtResource("1_jq7mi")

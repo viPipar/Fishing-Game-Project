@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 Deaths=""
 Ikan=""
 Kail=""
+fish_target=""
 
 [input]
 

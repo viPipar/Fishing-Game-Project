@@ -29,59 +29,64 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	is_input = false
-
+	if global_fishing.hooking == true:
+		velocity.x = 0.0
+		velocity.y = 0.0
+	else:
 	# ===== input movement normal =====
-	if Input.is_action_pressed("up"):
-		velocity.y = PULL_FORCE * 1.5
-		is_input = true
-	if Input.is_action_pressed("down"):
-		velocity.y = min(velocity.y + 50, MAX_DOWN_FORCE)
-		is_input = true
-	if Input.is_action_pressed("right"):
-		velocity.x = MOVE_SPEED
-		is_input = true
-	if Input.is_action_pressed("left"):
-		velocity.x = -MOVE_SPEED
-		is_input = true
+		if Input.is_action_pressed("up"):
+			velocity.y = PULL_FORCE * 1.5
+			is_input = true
+		if Input.is_action_pressed("down"):
+			velocity.y = min(velocity.y + 50, MAX_DOWN_FORCE)
+			is_input = true
+		if Input.is_action_pressed("right"):
+			velocity.x = MOVE_SPEED
+			is_input = true
+		if Input.is_action_pressed("left"):
+			velocity.x = -MOVE_SPEED
+			is_input = true
 
 	# ===== gerakan otomatis saat kail menempel ikan =====
-	if is_instance_valid(detect_area):
-		var overlapping := detect_area.get_overlapping_areas()
-		var touching_ikan := false
-		for area in overlapping:
-			if area.is_in_group("Ikan"):
-				touching_ikan = true
-				break
+		if is_instance_valid(detect_area):
+			var overlapping := detect_area.get_overlapping_areas()
+			var touching_ikan := false
+			for area in overlapping:
+				if area.is_in_group("Ikan"):
+					touching_ikan = true
+					break
 
-		if touching_ikan:
-			hook_time += delta
+			if touching_ikan:
+				hook_time += delta
 
-			var auto_x = MOVE_SPEED * 0.5 * sin(hook_time * 5.0)
-			var auto_y = -50
+				var auto_x = MOVE_SPEED * 0.5 * sin(hook_time * 5.0)
+				var auto_y = -50
 
-			var input_x = 0
-			var input_y = 0
-			if Input.is_action_pressed("up"):
-				input_y -= 200
-			if Input.is_action_pressed("right"):
-				input_x += MOVE_SPEED
-			if Input.is_action_pressed("left"):
-				input_x -= MOVE_SPEED
-			if Input.is_action_pressed("down"):
-				input_y += 200
+				var input_x = 0
+				var input_y = 0
+				if Input.is_action_pressed("up"):
+					input_y -= 200
+				if Input.is_action_pressed("right"):
+					input_x += MOVE_SPEED
+				if Input.is_action_pressed("left"):
+					input_x -= MOVE_SPEED
+				if Input.is_action_pressed("down"):
+					input_y += 200
 
-			velocity.x = auto_x + input_x
-			velocity.y = auto_y + input_y
-		else:
-			hook_time = 0.0
-			if not is_input:
-				velocity.x = 0
-				velocity.y = min(velocity.y + PULL_FORCE * delta, MAX_PULL_FORCE)
+				velocity.x = auto_x + input_x
+				velocity.y = auto_y + input_y
+			else:
+				hook_time = 0.0
+				if not is_input:
+					velocity.x = 0
+					velocity.y = min(velocity.y + PULL_FORCE * delta, MAX_PULL_FORCE)
 
 	# ===== debug input: re-activate hook =====
 	if Input.is_action_just_pressed("debug"):
 		reactivate_hook()
-
+	if global_fishing.release == true:
+		reactivate_hook()
+		
 	move_and_slide()
 	queue_redraw()  # update garis setiap frame
 

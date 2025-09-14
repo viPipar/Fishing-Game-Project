@@ -40,8 +40,9 @@ radius = 230.217
 size = Vector2(1720, 1220)
 
 [node name="ikan_nemo" type="CharacterBody2D" groups=["Ikan"]]
+process_mode = 3
 position = Vector2(-2.99988, -6.99994)
-scale = Vector2(0.08, 0.08)
+scale = Vector2(0.05, 0.05)
 collision_mask = 2
 script = ExtResource("1_hb6qx")
 adjust = Vector2(0, 50)
