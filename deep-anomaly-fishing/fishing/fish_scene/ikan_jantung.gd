@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed: float = 1000.0
+@export var speed: float = 700.0
 @export var N: float = 1000.0
-@export var M: float = 0.0
+@export var M: float = 1000.0
 @export var adjust:Vector2 = Vector2(0, 0)
 var O: float = 2 * N
 
@@ -91,11 +91,6 @@ func _physics_process(delta: float) -> void:
 	# ==== cek DeathArea & DetachArea ====
 	if hooked and is_instance_valid(DetectionArea):
 		for area in DetectionArea.get_overlapping_areas():
-			# Deaths tetap menghapus
-			if area.is_in_group("Deaths"):
-				queue_free()
-				return
-			# jika kena Detach -> terlepas dari hook dan jangan langsung reattach
 			if area.is_in_group("Detach"):
 				# lakukan detach hanya jika sedang hooked
 				if hooked:

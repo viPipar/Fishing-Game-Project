@@ -44,6 +44,7 @@ size = Vector2(397, 203)
 
 [node name="ikan_angler" type="CharacterBody2D" groups=["Ikan"]]
 process_mode = 3
+collision_mask = 2
 script = ExtResource("1_csrpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dc8xvytx4ulxc"]
 
 [ext_resource type="Texture2D" uid="uid://bjwtspjxl0uwj" path="res://fishing/fishing_asset/sprite/dori/dori.png" id="1_gcbqb"]
-[ext_resource type="Script" uid="uid://c1l6lwtr0slr2" path="res://ikan_biru.gd" id="1_ydx2d"]
+[ext_resource type="Script" uid="uid://c1l6lwtr0slr2" path="res://fishing/fish_scene/ikan_biru.gd" id="1_ydx2d"]
 [ext_resource type="Texture2D" uid="uid://dks4u8kdx2wt1" path="res://fishing/fishing_asset/sprite/dori/dori1.png" id="2_ydx2d"]
 [ext_resource type="Texture2D" uid="uid://de4eyeu3w5j5e" path="res://fishing/fishing_asset/sprite/dori/dori2.png" id="3_4ve5j"]
 [ext_resource type="Texture2D" uid="uid://d0m3lxqre8l0i" path="res://fishing/fishing_asset/sprite/dori/dori3.png" id="4_7i2lc"]
@@ -40,10 +40,9 @@ radius = 70.342
 size = Vector2(662, 313)
 
 [node name="ikan_dori" type="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.3, 0.3)
 collision_mask = 2
 script = ExtResource("1_ydx2d")
-adjust = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(88.5, -41)

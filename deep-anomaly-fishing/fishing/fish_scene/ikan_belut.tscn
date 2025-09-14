@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://5nn8sji48e10"]
 
-[ext_resource type="Script" uid="uid://3xadaslxgbcy" path="res://ikan_belut.gd" id="1_dqdgu"]
+[ext_resource type="Script" uid="uid://3xadaslxgbcy" path="res://fishing/fish_scene/ikan_belut.gd" id="1_dqdgu"]
 [ext_resource type="Texture2D" uid="uid://dycccxbo7jdqb" path="res://fishing/fishing_asset/sprite/belut/wakoko.png" id="2_85i0w"]
 [ext_resource type="Texture2D" uid="uid://c0m6iyndw6lod" path="res://fishing/fishing_asset/sprite/belut/wakoko1.png" id="3_8yb3n"]
 [ext_resource type="Texture2D" uid="uid://c4nj48s6a4wob" path="res://fishing/fishing_asset/sprite/belut/wakoko2.png" id="4_ags3d"]
@@ -52,7 +52,6 @@ process_mode = 3
 scale = Vector2(0.3, 0.3)
 collision_mask = 2
 script = ExtResource("1_dqdgu")
-adjust = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(39, 1)
