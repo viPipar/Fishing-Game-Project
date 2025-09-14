@@ -47,7 +47,6 @@ adjust = Vector2(-100, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(86.1111, -33.3334)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7xgu7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -67,5 +66,4 @@ shape = SubResource("CircleShape2D_f56gh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(83.3333, -25)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k2371")

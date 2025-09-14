@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lsnpaoyeshhm"
-path="res://.godot/imported/wakoko.png-0b629f8d996f29d1a50461cb1b37ad5d.ctex"
+uid="uid://c0m6iyndw6lod"
+path="res://.godot/imported/wakoko1.png-79fb13044605e51fc8ab0fbd41013298.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fishing/fishing_asset/sprite/wakoko/wakoko.png"
-dest_files=["res://.godot/imported/wakoko.png-0b629f8d996f29d1a50461cb1b37ad5d.ctex"]
+source_file="res://fishing/fishing_asset/sprite/belut/wakoko1.png"
+dest_files=["res://.godot/imported/wakoko1.png-79fb13044605e51fc8ab0fbd41013298.ctex"]
 
 [params]
 

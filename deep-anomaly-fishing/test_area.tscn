@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ddhr6fh841trt" path="res://fishing/fish_scene/ikan_nemo.tscn" id="3_xdpsd"]
 [ext_resource type="PackedScene" uid="uid://ck5fvd5c4miw3" path="res://fishing/fish_scene/ikan_tuna.tscn" id="4_6ii2q"]
 [ext_resource type="PackedScene" uid="uid://brtyb3oanvqeg" path="res://fishing/fish_scene/ikan_liawo.tscn" id="5_vt2yd"]
-[ext_resource type="PackedScene" uid="uid://b5lf0qav5sn1p" path="res://ikan_wakoko.tscn" id="6_xdpsd"]
 [ext_resource type="PackedScene" uid="uid://cphra3p67al7h" path="res://ikan_shark.tscn" id="7_6ii2q"]
+[ext_resource type="PackedScene" uid="uid://5nn8sji48e10" path="res://ikan_belut.tscn" id="8_7aw3l"]
 [ext_resource type="PackedScene" uid="uid://bl3ycceo1o6e8" path="res://ikan_dori.tscn" id="8_gql8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfpkf"]
@@ -22,7 +22,7 @@ position = Vector2(752, 68)
 collision_mask = 2
 
 [node name="ikan_angler" parent="." instance=ExtResource("2_vt2yd")]
-position = Vector2(724, 662)
+position = Vector2(600, 1022)
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
 
@@ -48,17 +48,14 @@ position = Vector2(187, 23)
 shape = SubResource("RectangleShape2D_gwgse")
 
 [node name="ikan_liawo" parent="." instance=ExtResource("5_vt2yd")]
-position = Vector2(365, 494)
+position = Vector2(328, 786)
 collision_mask = 2
 
-[node name="ikan_wakoko" parent="." instance=ExtResource("6_xdpsd")]
-position = Vector2(1545, 784)
-
 [node name="ikan_shark" parent="." instance=ExtResource("7_6ii2q")]
-position = Vector2(535, 202)
+position = Vector2(533, 485)
 
 [node name="ikan_dori" parent="." instance=ExtResource("8_gql8c")]
-position = Vector2(461, 898)
+position = Vector2(480, 126)
 
-[node name="ikan_dori2" parent="." instance=ExtResource("8_gql8c")]
-position = Vector2(1115, 81)
+[node name="ikan_belut" parent="." instance=ExtResource("8_7aw3l")]
+position = Vector2(1657, 165)
