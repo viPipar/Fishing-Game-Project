@@ -13,7 +13,10 @@ brother : then do it!
 entity : i would take your heart, changing it with the other heart i had. but there is gonna be some problem tought because it was an override contract
 brother : I don’t care.. just do it...
 => END
-
+~ stage_8_1_1
+entity: it's done, i've cured your little sister
+brother : .....
+=> END
 ~ stage_8_2
 brother : huft... please... make it work...
 => END

@@ -18,6 +18,8 @@ func _on_area_patung_body_shape_entered(body_rid: RID, body: Node2D, body_shape_
 		$blink_patung.visible=false
 		DialogueManager.show_dialogue_balloon(resource,"stage_8_1")
 		await global_village.dialogue_finished
+		$animation.visible=true
+		$animation/blood_pact.play("animated")
 		$quest_guide/Panel/quest_text.play("home")
 	else : pass
 
@@ -27,3 +29,11 @@ func _on_area_rumah_body_shape_entered(body_rid: RID, body: Node2D, body_shape_i
 		await global_village.dialogue_finished
 		SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_nine.tscn")
 	else : pass
+
+
+func _on_blood_pact_animation_finished() -> void:
+	await get_tree().create_timer(3.0).timeout
+	$animation.visible = false
+	DialogueManager.show_dialogue_balloon(resource,"stage_8_1_1")
+	await global_village.dialogue_finished
+	$quest_guide/Panel/quest_text.play("home")

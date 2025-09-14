@@ -1,9 +1,35 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtdw2oau3ymub"]
+[gd_scene load_steps=37 format=3 uid="uid://dtdw2oau3ymub"]
 
 [ext_resource type="Script" uid="uid://clyc7vt3hnl43" path="res://village/village_scene/stage_scene/stage_eight.gd" id="1_i6rth"]
 [ext_resource type="PackedScene" uid="uid://co3dyoynb6n4" path="res://village/village_scene/village_map.tscn" id="1_pfhjv"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_i6rth"]
 [ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="4_nqasw"]
+[ext_resource type="Texture2D" uid="uid://c6xym5vbk0hr1" path="res://village/village_asset/animation/pact_animation/1.png" id="5_kspbw"]
+[ext_resource type="Texture2D" uid="uid://bpdtwisrgm5r1" path="res://village/village_asset/animation/pact_animation/2.png" id="6_jj7p3"]
+[ext_resource type="Texture2D" uid="uid://74gbna33xtx4" path="res://village/village_asset/animation/pact_animation/3.png" id="7_so7gv"]
+[ext_resource type="Texture2D" uid="uid://c01vy1yw56l3d" path="res://village/village_asset/animation/pact_animation/4.png" id="8_785j0"]
+[ext_resource type="Texture2D" uid="uid://lkqnhffbpb0k" path="res://village/village_asset/animation/pact_animation/5.png" id="9_4y0ih"]
+[ext_resource type="Texture2D" uid="uid://b1qn45ols0t17" path="res://village/village_asset/animation/pact_animation/6.png" id="10_5puie"]
+[ext_resource type="Texture2D" uid="uid://dd66vib6wo6b1" path="res://village/village_asset/animation/pact_animation/7.png" id="11_imshk"]
+[ext_resource type="Texture2D" uid="uid://dbf6bubqmmv6i" path="res://village/village_asset/animation/pact_animation/8.png" id="12_kif0q"]
+[ext_resource type="Texture2D" uid="uid://cne1g6y6mpak5" path="res://village/village_asset/animation/pact_animation/9.png" id="13_ufnj4"]
+[ext_resource type="Texture2D" uid="uid://bmwntdu8wkyva" path="res://village/village_asset/animation/pact_animation/10.png" id="14_b0l81"]
+[ext_resource type="Texture2D" uid="uid://b5amio7vhnmj6" path="res://village/village_asset/animation/pact_animation/11.png" id="15_sa8ij"]
+[ext_resource type="Texture2D" uid="uid://b42hj0gh6ui57" path="res://village/village_asset/animation/pact_animation/12.png" id="16_y5gyu"]
+[ext_resource type="Texture2D" uid="uid://dehmtqqtq1pp0" path="res://village/village_asset/animation/pact_animation/13.png" id="17_nqac1"]
+[ext_resource type="Texture2D" uid="uid://diujbavbufc6i" path="res://village/village_asset/animation/pact_animation/14.png" id="18_71u6x"]
+[ext_resource type="Texture2D" uid="uid://bwofaq2l4qddl" path="res://village/village_asset/animation/pact_animation/15.png" id="19_g3ly8"]
+[ext_resource type="Texture2D" uid="uid://bsvrh1i4v8jxp" path="res://village/village_asset/animation/pact_animation/16.png" id="20_gp81r"]
+[ext_resource type="Texture2D" uid="uid://8ijft7p42yx8" path="res://village/village_asset/animation/pact_animation/17.png" id="21_yd4sk"]
+[ext_resource type="Texture2D" uid="uid://cpiclng7ehpc3" path="res://village/village_asset/animation/pact_animation/18.png" id="22_wp6fe"]
+[ext_resource type="Texture2D" uid="uid://b5sc4433mnaqq" path="res://village/village_asset/animation/pact_animation/19.png" id="23_bde28"]
+[ext_resource type="Texture2D" uid="uid://7csfx7b1jpy0" path="res://village/village_asset/animation/pact_animation/20.png" id="24_rdqqm"]
+[ext_resource type="Texture2D" uid="uid://c103u3bjd5gvy" path="res://village/village_asset/animation/pact_animation/21.png" id="25_pth7m"]
+[ext_resource type="Texture2D" uid="uid://y01h33xk4bus" path="res://village/village_asset/animation/pact_animation/22.png" id="26_hb17i"]
+[ext_resource type="Texture2D" uid="uid://b3nvepy5s5v80" path="res://village/village_asset/animation/pact_animation/23.png" id="27_xhojd"]
+[ext_resource type="Texture2D" uid="uid://cyxwwrgkwh0nj" path="res://village/village_asset/animation/pact_animation/24.png" id="28_w7iqc"]
+[ext_resource type="Texture2D" uid="uid://c3cnwnrsjpayx" path="res://village/village_asset/animation/pact_animation/25.png" id="29_8v7de"]
+[ext_resource type="Texture2D" uid="uid://wdyu50ynw26a" path="res://village/village_asset/animation/pact_animation/26.png" id="30_nwhsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqasw"]
 
@@ -45,6 +71,108 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kspbw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofvag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kspbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jj7p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_so7gv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_785j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4y0ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5puie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_imshk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kif0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ufnj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b0l81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sa8ij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y5gyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nqac1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_71u6x")
+}, {
+"duration": 1.3,
+"texture": ExtResource("19_g3ly8")
+}, {
+"duration": 1.3,
+"texture": ExtResource("20_gp81r")
+}, {
+"duration": 1.3,
+"texture": ExtResource("21_yd4sk")
+}, {
+"duration": 1.3,
+"texture": ExtResource("22_wp6fe")
+}, {
+"duration": 1.3,
+"texture": ExtResource("23_bde28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rdqqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pth7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_hb17i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xhojd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_w7iqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_8v7de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_nwhsf")
+}],
+"loop": false,
+"name": &"animated",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kspbw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_nwhsf")
+}],
+"loop": true,
+"name": &"idle_last",
+"speed": 5.0
+}]
 
 [node name="stage_eight" type="Node2D"]
 y_sort_enabled = true
@@ -106,5 +234,16 @@ autoplay = "blink"
 
 [node name="quest_guide" parent="." instance=ExtResource("4_nqasw")]
 
+[node name="animation" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="blood_pact" type="AnimatedSprite2D" parent="animation"]
+sprite_frames = SubResource("SpriteFrames_ofvag")
+animation = &"animated"
+frame = 25
+frame_progress = 1.0
+centered = false
+
 [connection signal="body_shape_entered" from="area_patung" to="." method="_on_area_patung_body_shape_entered"]
 [connection signal="body_shape_entered" from="area_rumah" to="." method="_on_area_rumah_body_shape_entered"]
+[connection signal="animation_finished" from="animation/blood_pact" to="." method="_on_blood_pact_animation_finished"]
