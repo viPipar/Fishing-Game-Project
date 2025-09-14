@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_one.tscn")
+	SceneTransition.change_scene("res://Game UI/scene/main_menu.tscn")

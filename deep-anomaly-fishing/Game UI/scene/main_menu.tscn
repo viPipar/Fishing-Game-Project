@@ -36,6 +36,7 @@ custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_fonts/font = ExtResource("2_87j08")
 theme_override_font_sizes/font_size = 50
 text = "START"
 flat = true
@@ -45,6 +46,7 @@ custom_minimum_size = Vector2(220, 100)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.529412, 0.529412, 0.529412, 1)
+theme_override_fonts/font = ExtResource("2_87j08")
 theme_override_font_sizes/font_size = 50
 text = "How to Play"
 flat = true
@@ -64,8 +66,73 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.529067, 0.529067, 0.529067, 1)
+theme_override_fonts/font = ExtResource("2_87j08")
 theme_override_font_sizes/font_size = 50
 text = "Exit"
+flat = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -200.0
+offset_top = 231.0
+offset_right = -160.0
+offset_bottom = 271.0
+
+[node name="Bayangan" type="ColorRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.415686)
+layout_mode = 0
+offset_left = -785.0
+offset_top = -809.0
+offset_right = 1179.0
+offset_bottom = 348.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -220.0
+offset_top = -544.0
+offset_right = 624.0
+offset_bottom = 86.0
+
+[node name="How to Play" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.0
+offset_top = -488.0
+offset_right = 496.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_87j08")
+theme_override_font_sizes/font_size = 50
+text = "How to Play
+
+w = up
+s = down
+a = left
+d = right
+
+space = minigame fishing
+\\ = debug to skip fishing"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = -549.0
+offset_right = 646.0
+offset_bottom = -459.0
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_87j08")
+theme_override_font_sizes/font_size = 50
+text = "X"
 flat = true
 
 [connection signal="pressed" from="CenterContainer/GridContainer/Start" to="." method="_on_start_pressed"]
