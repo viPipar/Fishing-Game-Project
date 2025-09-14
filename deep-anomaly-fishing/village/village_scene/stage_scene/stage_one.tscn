@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmb2gsyra3482"]
+[gd_scene load_steps=39 format=3 uid="uid://cmb2gsyra3482"]
 
 [ext_resource type="Script" uid="uid://dh21187yfxup3" path="res://village/village_scene/stage_scene/stage_one.gd" id="1_jxeqa"]
 [ext_resource type="PackedScene" uid="uid://borfx4e7ved6t" path="res://village/village_scene/home.tscn" id="1_q7hwh"]
@@ -6,6 +6,30 @@
 [ext_resource type="Texture2D" uid="uid://c2lqswhk0mdyw" path="res://ui/ui_asset/panel_asset/go outside text.png" id="3_nqycm"]
 [ext_resource type="Texture2D" uid="uid://bju0jchi2vwb7" path="res://ui/ui_asset/panel_asset/medicine_panel_text.png" id="4_lr0my"]
 [ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="6_nm5ss"]
+[ext_resource type="Texture2D" uid="uid://cnghsxm6arrhw" path="res://village/village_asset/animation/ramuan_animation/1.png" id="7_wmrk3"]
+[ext_resource type="Texture2D" uid="uid://rnga15ilqq8m" path="res://village/village_asset/animation/ramuan_animation/2.png" id="8_8j6d1"]
+[ext_resource type="Texture2D" uid="uid://dgi1wl5wahfws" path="res://village/village_asset/animation/ramuan_animation/3.png" id="9_nm3wl"]
+[ext_resource type="Texture2D" uid="uid://ch4y7qnr32ebt" path="res://village/village_asset/animation/ramuan_animation/4.png" id="10_wmfk8"]
+[ext_resource type="Texture2D" uid="uid://dbnab43y5g5wl" path="res://village/village_asset/animation/ramuan_animation/5.png" id="11_as0d5"]
+[ext_resource type="Texture2D" uid="uid://bkfy3cpod4trl" path="res://village/village_asset/animation/ramuan_animation/6.png" id="12_cgs5b"]
+[ext_resource type="Texture2D" uid="uid://bgejh2hronus3" path="res://village/village_asset/animation/ramuan_animation/7.png" id="13_sodjr"]
+[ext_resource type="Texture2D" uid="uid://llijrl68bskw" path="res://village/village_asset/animation/ramuan_animation/8.png" id="14_tqplj"]
+[ext_resource type="Texture2D" uid="uid://cwh8vdlrs7w8l" path="res://village/village_asset/animation/ramuan_animation/9.png" id="15_k78tj"]
+[ext_resource type="Texture2D" uid="uid://cfekcqcb62o8f" path="res://village/village_asset/animation/ramuan_animation/10.png" id="16_8iqkr"]
+[ext_resource type="Texture2D" uid="uid://dlhjm5k4xy6wn" path="res://village/village_asset/animation/ramuan_animation/11.png" id="17_tbg4s"]
+[ext_resource type="Texture2D" uid="uid://bicnixtotpyk3" path="res://village/village_asset/animation/ramuan_animation/12.png" id="18_uh8ng"]
+[ext_resource type="Texture2D" uid="uid://cimjaxmgu86cc" path="res://village/village_asset/animation/ramuan_animation/13.png" id="19_gxlaj"]
+[ext_resource type="Texture2D" uid="uid://cocejos22qiki" path="res://village/village_asset/animation/ramuan_animation/14.png" id="20_k5h65"]
+[ext_resource type="Texture2D" uid="uid://bg8q0n6h4k2b2" path="res://village/village_asset/animation/ramuan_animation/15.png" id="21_7pdcs"]
+[ext_resource type="Texture2D" uid="uid://c1h4kigybw14k" path="res://village/village_asset/animation/ramuan_animation/16.png" id="22_7h3un"]
+[ext_resource type="Texture2D" uid="uid://drvy1x2vgss6j" path="res://village/village_asset/animation/ramuan_animation/17.png" id="23_6fjlo"]
+[ext_resource type="Texture2D" uid="uid://bkou37rag5qng" path="res://village/village_asset/animation/ramuan_animation/18.png" id="24_tvjkr"]
+[ext_resource type="Texture2D" uid="uid://1dldw2rmi6kf" path="res://village/village_asset/animation/ramuan_animation/19.png" id="25_yu6bt"]
+[ext_resource type="Texture2D" uid="uid://buolry5qlnjf6" path="res://village/village_asset/animation/ramuan_animation/20.png" id="26_goa4h"]
+[ext_resource type="Texture2D" uid="uid://8mwrbep5027b" path="res://village/village_asset/animation/ramuan_animation/21.png" id="27_hn401"]
+[ext_resource type="Texture2D" uid="uid://cylayut7vlp2b" path="res://village/village_asset/animation/ramuan_animation/22.png" id="28_lwvsx"]
+[ext_resource type="Texture2D" uid="uid://dmvdb5jhygwcq" path="res://village/village_asset/animation/ramuan_animation/23.png" id="29_62nwm"]
+[ext_resource type="Texture2D" uid="uid://blt43cq2l0jpq" path="res://village/village_asset/animation/ramuan_animation/24.png" id="30_7273g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7hwh"]
 
@@ -51,6 +75,86 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqycm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ko6k1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wmrk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8j6d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nm3wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wmfk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_as0d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cgs5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sodjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tqplj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_k78tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8iqkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tbg4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uh8ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gxlaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k5h65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7pdcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7h3un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_6fjlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_tvjkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yu6bt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_goa4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hn401")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_lwvsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_62nwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_7273g")
+}],
+"loop": false,
+"name": &"animation",
+"speed": 5.0
+}]
 
 [node name="stage_one" type="Node2D"]
 y_sort_enabled = true
@@ -157,6 +261,16 @@ shape = SubResource("RectangleShape2D_nqycm")
 
 [node name="quest_guide" parent="." instance=ExtResource("6_nm5ss")]
 
+[node name="ramuan" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ramuan_sprite" type="AnimatedSprite2D" parent="ramuan"]
+sprite_frames = SubResource("SpriteFrames_ko6k1")
+animation = &"animation"
+frame = 23
+frame_progress = 1.0
+centered = false
+
 [connection signal="pressed" from="control/Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="control/medicine_panel/medicine_yes_button" to="." method="_on_medicine_yes_button_pressed"]
 [connection signal="body_entered" from="leave" to="." method="_on_leave_body_entered"]
@@ -165,3 +279,4 @@ shape = SubResource("RectangleShape2D_nqycm")
 [connection signal="body_shape_exited" from="area_medicine" to="." method="_on_area_medicine_body_shape_exited"]
 [connection signal="body_shape_entered" from="area_kamar" to="." method="_on_area_kamar_body_shape_entered"]
 [connection signal="body_shape_entered" from="area_keluar_kamar" to="." method="_on_area_keluar_kamar_body_shape_entered"]
+[connection signal="animation_finished" from="ramuan/ramuan_sprite" to="." method="_on_ramuan_sprite_animation_finished"]

@@ -2,6 +2,7 @@ extends Node2D
 
 var medicine = 0
 var resource = preload("res://dialogue/stage_1.dialogue")
+signal ramuan_animation_done
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +26,10 @@ func _on_area_medicine_body_shape_exited(body_rid: RID, body: Node2D, body_shape
 	else : pass
 func _on_medicine_yes_button_pressed() -> void:
 	medicine = 1
+	$ramuan.visible=true
+	$ramuan/ramuan_sprite.play("animation")
+	await ramuan_animation_done
+	$ramuan.queue_free()
 	$quest_guide/Panel/quest_text.play("givemed")
 	#dialog
 	#pop up medicine
@@ -65,3 +70,7 @@ func _on_leave_body_exited(body: Node2D) -> void:
 	else : pass
 func _on_button_pressed() -> void:
 	SceneTransition.change_scene("res://village/village_scene/stage_scene/stage_two.tscn")
+
+
+func _on_ramuan_sprite_animation_finished() -> void:
+	emit_signal("ramuan_animation_done")
