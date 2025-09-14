@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Tombol clicker
-	if $Clicker.button_pressed:
+	if Input.is_action_pressed("minigame"):
 		if hookVelocity > -maxVelocity:
 			hookVelocity -= hookAcceleration
 	else:
@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	var target: float = $Hook.position.y + hookVelocity
 
 	# Cek batas atas bawah
-	if target >= 350.0:
+	if target >= 348.0:
 		hookVelocity *= -bounce
 	elif target <= -325.0:
 		hookVelocity = 0.0
@@ -59,9 +59,7 @@ func lost_fish() -> void:
 		get_node("Fish").queue_free()
 	$Progress.value = 0.0
 	fishable = true
-	await get_tree().create_timer(3.0).timeout
-	spawn_easy()
-
+	
 func add_fish(min_d: float, max_d: float, move_speed: float, move_time: float) -> void:
 	var f = fish.instantiate()
 	f.position = Vector2($Hook.position.x, $Hook.position.y)

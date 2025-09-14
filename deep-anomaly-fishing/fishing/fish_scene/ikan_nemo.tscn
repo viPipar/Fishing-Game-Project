@@ -40,8 +40,8 @@ radius = 230.217
 size = Vector2(1720, 1220)
 
 [node name="ikan_nemo" type="CharacterBody2D" groups=["Ikan"]]
-position = Vector2(1571, 873)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-2.99988, -6.99994)
+scale = Vector2(0.08, 0.08)
 collision_mask = 2
 script = ExtResource("1_hb6qx")
 adjust = Vector2(0, 50)
@@ -67,5 +67,9 @@ shape = SubResource("CircleShape2D_hb6qx")
 [node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(155, 50)
+shape = SubResource("RectangleShape2D_huwp8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(155, 50)
 shape = SubResource("RectangleShape2D_huwp8")

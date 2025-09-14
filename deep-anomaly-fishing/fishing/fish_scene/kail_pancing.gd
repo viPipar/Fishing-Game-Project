@@ -10,7 +10,6 @@ const MOVE_SPEED := 300.0
 
 # ======= STATE =======
 var is_input := false
-var hooking: bool = false
 var start_pos: Vector2   # posisi awal kail (anchor tetap)
 var hook_time: float = 0.0
 
@@ -55,7 +54,6 @@ func _process(delta: float) -> void:
 				break
 
 		if touching_ikan:
-			hooking = true
 			hook_time += delta
 
 			var auto_x = MOVE_SPEED * 0.5 * sin(hook_time * 5.0)
@@ -75,7 +73,7 @@ func _process(delta: float) -> void:
 			velocity.x = auto_x + input_x
 			velocity.y = auto_y + input_y
 		else:
-			hooking = false
+			
 			hook_time = 0.0
 			if not is_input:
 				velocity.x = 0
@@ -98,7 +96,7 @@ func _on_HookArea_area_entered(area: Area2D) -> void:
 	if not (area is Area2D and area.name == "MouthArea"):
 		return
 
-	hooking = true
+	global_fishing.hooking = true
 	_deactivate_hook_after_delay()
 
 # gunakan deferred untuk menunggu sebelum hook nonaktif
@@ -122,5 +120,5 @@ func reactivate_hook() -> void:
 	hook_area.set_deferred("visible", true)
 	if is_instance_valid(hook_shape):
 		hook_shape.set_deferred("disabled", false)
-	hooking = false
+	
 	hook_time = 0.0

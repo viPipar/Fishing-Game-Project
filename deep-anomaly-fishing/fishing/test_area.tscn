@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://stfkdviuvdg5"]
 
-[ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/kail_pancing.tscn" id="1_64fjj"]
-[ext_resource type="PackedScene" uid="uid://chqn7a0cg5cu7" path="res://fishing/ikan_angler.tscn" id="2_rfpkf"]
+[ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="1_64fjj"]
+[ext_resource type="PackedScene" path="res://fishing/ikan_angler.tscn" id="2_rfpkf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfpkf"]
 size = Vector2(984, 20)
