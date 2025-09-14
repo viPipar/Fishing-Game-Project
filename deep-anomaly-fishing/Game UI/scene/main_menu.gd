@@ -13,5 +13,6 @@ func _on_credit_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
+
 func _on_x_pressed() -> void:
-	$Control.visible = !$Control.visible
+	pass # Replace with function body.
