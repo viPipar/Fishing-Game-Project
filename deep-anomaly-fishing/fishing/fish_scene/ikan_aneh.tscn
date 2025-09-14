@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://bt03qvqxku83d"]
 
 [ext_resource type="Texture2D" uid="uid://cb0hvd4kpyd7" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh.png" id="1_ex0qp"]
-[ext_resource type="Script" uid="uid://cvn5yes5onok2" path="res://ikan_aneh.gd" id="1_mkrwt"]
+[ext_resource type="Script" uid="uid://cvn5yes5onok2" path="res://fishing/fish_scene/ikan_aneh.gd" id="1_mkrwt"]
 [ext_resource type="Texture2D" uid="uid://bqfwc0gtpftji" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh1.png" id="2_mkrwt"]
 [ext_resource type="Texture2D" uid="uid://dxtiudvn2b46q" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh2.png" id="3_hts66"]
 [ext_resource type="Texture2D" uid="uid://6g6keh6sl6wo" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh3.png" id="4_gpfkp"]
