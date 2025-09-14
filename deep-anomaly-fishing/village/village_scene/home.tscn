@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b0fuxyti6etnp" path="res://village/village_asset/walls_floor.png" id="1_1vmyk"]
 [ext_resource type="Texture2D" uid="uid://dto733cahjgld" path="res://village/village_asset/Interior.png" id="2_y2v47"]
-[ext_resource type="PackedScene" uid="uid://r8cyjg4kqy6w" path="res://village/village_scene/sister.tscn" id="4_y2v47"]
+[ext_resource type="PackedScene" path="res://village/village_scene/sister.tscn" id="4_y2v47"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y2v47"]
 texture = ExtResource("1_1vmyk")

@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_qw5qx"]
+
+[resource]
+script = ExtResource("1_qw5qx")
+using_states = PackedStringArray()
+titles = {
+"stage_7_1": "1"
+}
+character_names = PackedStringArray("sister", "brother")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "sister",
+&"id": "1",
+&"next_id": "2",
+&"text": "Brother... why do you looks so pale.",
+&"type": "dialogue"
+},
+"2": {
+&"character": "brother",
+&"id": "2",
+&"next_id": "3",
+&"text": "oh.. i just need to rest a little bit",
+&"type": "dialogue"
+},
+"3": {
+&"character": "sister",
+&"id": "3",
+&"next_id": "4",
+&"text": "Are you hiding something from me... brother....",
+&"type": "dialogue"
+},
+"4": {
+&"character": "brother",
+&"id": "4",
+&"next_id": "5",
+&"text": "n.. no.. of course not.",
+&"type": "dialogue"
+},
+"5": {
+&"character": "brother",
+&"id": "5",
+&"next_id": "6",
+&"text": "i need to rest, i’ll talk to you again tommorow.",
+&"type": "dialogue"
+},
+"6": {
+&"character": "sister",
+&"id": "6",
+&"next_id": "7",
+&"text": "He.. Hey...",
+&"type": "dialogue"
+},
+"7": {
+&"id": "7",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"8": {
+&"id": "8",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+raw_text = "~ stage_7_1
+sister : Brother... why do you looks so pale.
+brother : oh.. i just need to rest a little bit
+sister : Are you hiding something from me... brother....
+brother : n.. no.. of course not.
+brother : i need to rest, i’ll talk to you again tommorow.
+sister : He.. Hey...
+=> END"
+metadata/dialogue_manager_version = "3.7.1"

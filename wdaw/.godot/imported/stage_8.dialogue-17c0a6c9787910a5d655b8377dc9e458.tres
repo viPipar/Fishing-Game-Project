@@ -1,0 +1,169 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_xydeq"]
+
+[resource]
+script = ExtResource("1_xydeq")
+using_states = PackedStringArray()
+titles = {
+"stage_8_1": "1",
+"stage_8_2": "17"
+}
+character_names = PackedStringArray("brother", "entity")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "brother",
+&"id": "1",
+&"next_id": "2",
+&"text": "Here... the ‘sacrifice fish’. now your turn to cure my sister!",
+&"type": "dialogue"
+},
+"10": {
+&"character": "entity",
+&"id": "10",
+&"next_id": "11",
+&"text": "but.... you could override the contract by making a real one.... not only changing the contract but also remove her memory of the contract",
+&"type": "dialogue"
+},
+"11": {
+&"character": "brother",
+&"id": "11",
+&"next_id": "12",
+&"text": "then do it!",
+&"type": "dialogue"
+},
+"12": {
+&"character": "entity",
+&"id": "12",
+&"next_id": "13",
+&"text": "i would take your heart, changing it with the other heart i had. but there is gonna be some problem tought because it was an override contract",
+&"type": "dialogue"
+},
+"13": {
+&"character": "brother",
+&"id": "13",
+&"next_id": "14",
+&"text": "I don’t care.. just do it...",
+&"type": "dialogue"
+},
+"14": {
+&"id": "14",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"15": {
+&"id": "15",
+&"next_id": "16",
+&"type": ""
+},
+"16": {
+&"id": "16",
+&"next_id": "17",
+&"type": "title"
+},
+"17": {
+&"character": "brother",
+&"id": "17",
+&"next_id": "18",
+&"text": "huft... please... make it work...",
+&"type": "dialogue"
+},
+"18": {
+&"id": "18",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"19": {
+&"id": "19",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"2": {
+&"character": "entity",
+&"id": "2",
+&"next_id": "3",
+&"text": "i’m afraid I couldn’t do that",
+&"type": "dialogue"
+},
+"3": {
+&"character": "brother",
+&"id": "3",
+&"next_id": "4",
+&"text": "what the ****, I did the things you told me to...",
+&"type": "dialogue"
+},
+"4": {
+&"character": "entity",
+&"id": "4",
+&"next_id": "5",
+&"text": ".....",
+&"type": "dialogue"
+},
+"5": {
+&"character": "entity",
+&"id": "5",
+&"next_id": "6",
+&"text": "your sister come here while you’re not here.",
+&"type": "dialogue"
+},
+"6": {
+&"character": "brother",
+&"id": "6",
+&"next_id": "7",
+&"text": "my sister did? ",
+&"type": "dialogue"
+},
+"7": {
+&"character": "entity",
+&"id": "7",
+&"next_id": "8",
+&"text": "she said she would offer her heart if I promised to not contact you anymore.",
+&"type": "dialogue"
+},
+"8": {
+&"character": "brother",
+&"id": "8",
+&"next_id": "9",
+&"text": "that’s a bullshit.... promised is a promised.... you did that with me first....",
+&"type": "dialogue"
+},
+"9": {
+&"character": "entity",
+&"id": "9",
+&"next_id": "10",
+&"text": "our contract wansn't real, my contract with her are pact with blood.",
+&"type": "dialogue"
+}
+}
+raw_text = "~ stage_8_1
+brother : Here... the ‘sacrifice fish’. now your turn to cure my sister!
+entity : i’m afraid I couldn’t do that
+brother : what the ****, I did the things you told me to...
+entity : .....
+entity : your sister come here while you’re not here.
+brother : my sister did? 
+entity : she said she would offer her heart if I promised to not contact you anymore.
+brother : that’s a bullshit.... promised is a promised.... you did that with me first....
+entity : our contract wansn't real, my contract with her are pact with blood. 
+entity : but.... you could override the contract by making a real one.... not only changing the contract but also remove her memory of the contract
+brother : then do it!
+entity : i would take your heart, changing it with the other heart i had. but there is gonna be some problem tought because it was an override contract
+brother : I don’t care.. just do it...
+=> END
+
+~ stage_8_2
+brother : huft... please... make it work...
+=> END"
+metadata/dialogue_manager_version = "3.7.1"

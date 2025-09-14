@@ -1,0 +1,193 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_gyxhr"]
+
+[resource]
+script = ExtResource("1_gyxhr")
+using_states = PackedStringArray()
+titles = {
+"stage_2_1": "1",
+"stage_2_2": "9"
+}
+character_names = PackedStringArray("brother", "entity")
+first_title = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "1",
+&"type": "title"
+},
+"1": {
+&"character": "brother",
+&"id": "1",
+&"next_id": "2",
+&"text": "mom.... dad..... it’s been a while....",
+&"type": "dialogue"
+},
+"10": {
+&"character": "entity",
+&"id": "10",
+&"next_id": "11",
+&"text": "it does not matter. what matter is, I know the way to cure your little sister.",
+&"type": "dialogue"
+},
+"11": {
+&"character": "brother",
+&"id": "11",
+&"next_id": "12",
+&"text": "there is no way, not even the best doctor in town could cure her.",
+&"type": "dialogue"
+},
+"12": {
+&"character": "entity",
+&"id": "12",
+&"next_id": "13",
+&"text": "they couldn’t. not without magic.",
+&"type": "dialogue"
+},
+"13": {
+&"character": "brother",
+&"id": "13",
+&"next_id": "14",
+&"text": "(thinking).......",
+&"type": "dialogue"
+},
+"14": {
+&"character": "brother",
+&"id": "14",
+&"next_id": "15",
+&"text": "what should i do?......",
+&"type": "dialogue"
+},
+"15": {
+&"character": "entity",
+&"id": "15",
+&"next_id": "16",
+&"text": "go to the sea, find the sarifice fish and then come back to me.",
+&"type": "dialogue"
+},
+"16": {
+&"character": "brother",
+&"id": "16",
+&"next_id": "17",
+&"text": "sacrifice fish?....",
+&"type": "dialogue"
+},
+"17": {
+&"character": "entity",
+&"id": "17",
+&"next_id": "18",
+&"text": ".......",
+&"type": "dialogue"
+},
+"18": {
+&"character": "brother",
+&"id": "18",
+&"next_id": "19",
+&"text": "hey? why are you not answering me?",
+&"type": "dialogue"
+},
+"19": {
+&"character": "entity",
+&"id": "19",
+&"next_id": "20",
+&"text": ".......",
+&"type": "dialogue"
+},
+"2": {
+&"character": "brother",
+&"id": "2",
+&"next_id": "3",
+&"text": "i’m sorry i can’t come here frequent enough... i need to take care of sella....",
+&"type": "dialogue"
+},
+"20": {
+&"character": "brother",
+&"id": "20",
+&"next_id": "21",
+&"text": "fine..... i just need to bring that here right...",
+&"type": "dialogue"
+},
+"21": {
+&"id": "21",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"22": {
+&"id": "22",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"3": {
+&"character": "brother",
+&"id": "3",
+&"next_id": "4",
+&"text": "hiks-hiks.... oh no... i need to be strong, sella needs me",
+&"type": "dialogue"
+},
+"4": {
+&"character": "entity",
+&"id": "4",
+&"next_id": "5",
+&"text": "Don’t cry my child....",
+&"type": "dialogue"
+},
+"5": {
+&"character": "brother",
+&"id": "5",
+&"next_id": "6",
+&"text": "who is that??!!!",
+&"type": "dialogue"
+},
+"6": {
+&"id": "6",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"7": {
+&"id": "7",
+&"next_id": "8",
+&"type": ""
+},
+"8": {
+&"id": "8",
+&"next_id": "9",
+&"type": "title"
+},
+"9": {
+&"character": "brother",
+&"id": "9",
+&"next_id": "10",
+&"text": "what in the hell are you....",
+&"type": "dialogue"
+}
+}
+raw_text = "~ stage_2_1
+brother : mom.... dad..... it’s been a while.... 
+brother : i’m sorry i can’t come here frequent enough... i need to take care of sella.... 
+brother : hiks-hiks.... oh no... i need to be strong, sella needs me
+entity : Don’t cry my child....
+brother : who is that??!!!
+=> END
+
+~ stage_2_2
+brother : what in the hell are you....
+entity : it does not matter. what matter is, I know the way to cure your little sister.
+brother : there is no way, not even the best doctor in town could cure her.
+entity : they couldn’t. not without magic.
+brother : (thinking).......
+brother : what should i do?......
+entity : go to the sea, find the sarifice fish and then come back to me.
+brother : sacrifice fish?....
+entity : .......
+brother : hey? why are you not answering me?
+entity : .......
+brother : fine..... i just need to bring that here right...
+=> END"
+metadata/dialogue_manager_version = "3.7.1"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://stfkdviuvdg5"]
+[gd_scene load_steps=11 format=3 uid="uid://ctgvoccwe3uq0"]
 
 [ext_resource type="PackedScene" uid="uid://3siw6cp2pi75" path="res://fishing/fish_scene/kail_pancing.tscn" id="1_od0h0"]
 [ext_resource type="PackedScene" uid="uid://ddg13kyuwe7uw" path="res://fishing/fish_scene/ikan_angler.tscn" id="2_vt2yd"]
