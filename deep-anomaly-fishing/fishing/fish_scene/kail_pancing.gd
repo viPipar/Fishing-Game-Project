@@ -7,16 +7,21 @@ const MAX_DOWN_FORCE := 400.0
 const MOVE_SPEED := 300.0
 
 @export var deactivate_delay: float = 0.03  # jeda sebelum hook nonaktif
+@export var detach_duration: float = 1.0    # durasi DetachArea aktif dan HookArea nonaktif (detik)
 
 # ======= STATE =======
 var is_input := false
 var start_pos: Vector2   # posisi awal kail (anchor tetap)
 var hook_time: float = 0.0
+var _detach_in_progress: bool = false
 
 # ======= NODE REFS =======
 @onready var hook_area: Area2D = $HookArea
 @onready var hook_shape: CollisionShape2D = $HookArea/CollisionShape2D
 @onready var detect_area: Area2D = $DetectArea
+# Detach area (di-activate / di-activate lewat input "detach")
+@onready var detach_area: Area2D = $DetachArea
+@onready var detach_shape: CollisionShape2D = $DetachArea/CollisionShape2D
 
 # ======= LIFE CYCLE =======
 func _ready() -> void:
@@ -26,6 +31,12 @@ func _ready() -> void:
 	# pastikan hook shape aktif
 	if is_instance_valid(hook_shape):
 		hook_shape.disabled = false
+	# pastikan detach area dalam kondisi non-aktif awal
+	if is_instance_valid(detach_area):
+		detach_area.monitoring = false
+		detach_area.visible = false
+	if is_instance_valid(detach_shape):
+		detach_shape.disabled = true
 
 func _process(delta: float) -> void:
 	is_input = false
@@ -86,7 +97,13 @@ func _process(delta: float) -> void:
 		reactivate_hook()
 	if global_fishing.release == true:
 		reactivate_hook()
-		
+
+	# ===== new input: aktifkan DetachArea sementara dan nonaktifkan HookArea sementara =====
+	if Input.is_action_just_pressed("detach"):
+		# jangan izinkan overlapping detach action jika sudah berjalan
+		if not _detach_in_progress:
+			start_detach_sequence()
+
 	move_and_slide()
 	queue_redraw()  # update garis setiap frame
 
@@ -126,3 +143,59 @@ func reactivate_hook() -> void:
 		hook_shape.set_deferred("disabled", false)
 	
 	hook_time = 0.0
+
+# ======= UTIL: Detach Area control =======
+func _activate_detach_area() -> void:
+	if not is_instance_valid(detach_area):
+		return
+	# aktifkan secara deferred agar aman pada frame ini
+	detach_area.set_deferred("monitoring", true)
+	detach_area.set_deferred("visible", true)
+	if is_instance_valid(detach_shape):
+		detach_shape.set_deferred("disabled", false)
+
+func deactivate_detach_area() -> void:
+	if not is_instance_valid(detach_area):
+		return
+	detach_area.set_deferred("monitoring", false)
+	detach_area.set_deferred("visible", false)
+	if is_instance_valid(detach_shape):
+		detach_shape.set_deferred("disabled", true)
+
+# ======= NEW: sequence to detach fish =======
+func start_detach_sequence() -> void:
+	# start detach sequence (aktifkan DetachArea dan nonaktifkan HookArea sementara)
+	_detach_in_progress = true
+
+	# aktifkan DetachArea
+	if is_instance_valid(detach_area):
+		detach_area.set_deferred("monitoring", true)
+		detach_area.set_deferred("visible", true)
+	if is_instance_valid(detach_shape):
+		detach_shape.set_deferred("disabled", false)
+
+	# nonaktifkan HookArea dan shape
+	if is_instance_valid(hook_area):
+		hook_area.set_deferred("monitoring", false)
+		hook_area.set_deferred("visible", false)
+	if is_instance_valid(hook_shape):
+		hook_shape.set_deferred("disabled", true)
+
+	# biarkan dalam kondisi ini selama detach_duration detik
+	await get_tree().create_timer(detach_duration).timeout
+
+	# kembalikan keadaan: Deactivate DetachArea dan re-enable HookArea
+	if is_instance_valid(detach_area):
+		detach_area.set_deferred("monitoring", false)
+		detach_area.set_deferred("visible", false)
+	if is_instance_valid(detach_shape):
+		detach_shape.set_deferred("disabled", true)
+
+	if is_instance_valid(hook_area):
+		hook_area.set_deferred("monitoring", true)
+		hook_area.set_deferred("visible", true)
+	if is_instance_valid(hook_shape):
+		hook_shape.set_deferred("disabled", false)
+
+	# reset state
+	_detach_in_progress = false

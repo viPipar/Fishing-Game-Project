@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://w88lcc4gcjp4"]
 
-[ext_resource type="Script" uid="uid://dj7fldfm225gf" path="res://ikan_plongo.gd" id="1_eyvx5"]
+[ext_resource type="Script" uid="uid://dj7fldfm225gf" path="res://fishing/fish_scene/ikan_plongo.gd" id="1_eyvx5"]
 [ext_resource type="Texture2D" uid="uid://pfktp5vxyn4b" path="res://fishing/fishing_asset/sprite/ikan_plongo/qwpo.png" id="1_namw2"]
 [ext_resource type="Texture2D" uid="uid://bu3gsguxsxu0x" path="res://fishing/fishing_asset/sprite/ikan_plongo/qwpo1.png" id="2_eyvx5"]
 [ext_resource type="Texture2D" uid="uid://b3n0n70qvw5yf" path="res://fishing/fishing_asset/sprite/ikan_plongo/qwpo2.png" id="3_6ema3"]
@@ -46,12 +46,9 @@ size = Vector2(674, 214)
 scale = Vector2(0.4, 0.4)
 collision_mask = 2
 script = ExtResource("1_eyvx5")
-adjust = Vector2(0, 0)
-hooked_rotation_degrees = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-138, -56)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lxwo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -68,7 +65,6 @@ shape = SubResource("CircleShape2D_sj07n")
 
 [node name="DeathArea" type="Area2D" parent="AnimatedSprite2D" groups=["Deaths"]]
 process_mode = 3
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/DeathArea"]
 position = Vector2(297.5, 2.5)
@@ -79,5 +75,4 @@ process_mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(-147, -39)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3jmna")
