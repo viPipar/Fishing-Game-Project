@@ -1,0 +1,84 @@
+[gd_scene load_steps=17 format=3 uid="uid://b8oigsr73k7j2"]
+
+[ext_resource type="Script" uid="uid://udfgkyjq5qs2" path="res://jantung.gd" id="1_s5ihf"]
+[ext_resource type="Texture2D" uid="uid://otccupk0kxii" path="res://ui/ui_asset/jantung_asset/j1.png" id="2_320bp"]
+[ext_resource type="Texture2D" uid="uid://b02gu5q3qw3u2" path="res://ui/ui_asset/jantung_asset/j2.png" id="3_w58an"]
+[ext_resource type="Texture2D" uid="uid://tqpdimeck6n7" path="res://ui/ui_asset/jantung_asset/j3.png" id="4_wt6a7"]
+[ext_resource type="Texture2D" uid="uid://bp1jm27yq624p" path="res://ui/ui_asset/jantung_asset/j4.png" id="5_7qpfd"]
+[ext_resource type="Texture2D" uid="uid://by0w232jfbh6d" path="res://ui/ui_asset/jantung_asset/j5.png" id="6_kld33"]
+[ext_resource type="Texture2D" uid="uid://2dg71l44scsl" path="res://ui/ui_asset/jantung_asset/j6.png" id="7_8u21j"]
+[ext_resource type="Texture2D" uid="uid://bembfcsxvuvv8" path="res://ui/ui_asset/jantung_asset/j7.png" id="8_x5adf"]
+[ext_resource type="Texture2D" uid="uid://c1ll4jq2ovqd4" path="res://ui/ui_asset/jantung_asset/j8.png" id="9_1n0qx"]
+[ext_resource type="Texture2D" uid="uid://cwyit1m8j5d8p" path="res://ui/ui_asset/jantung_asset/j9.png" id="10_vehiv"]
+[ext_resource type="Texture2D" uid="uid://c316fif0i0rg1" path="res://ui/ui_asset/jantung_asset/j10.png" id="11_b2wpd"]
+[ext_resource type="Texture2D" uid="uid://b6dnwl6hek6c6" path="res://ui/ui_asset/jantung_asset/j11.png" id="12_ooqbu"]
+[ext_resource type="Texture2D" uid="uid://dlbtjgf7jvh2w" path="res://ui/ui_asset/jantung_asset/j12.png" id="13_vpww4"]
+[ext_resource type="Texture2D" uid="uid://cx7td1xpj8hmg" path="res://ui/ui_asset/jantung_asset/j13.png" id="14_isik8"]
+[ext_resource type="Texture2D" uid="uid://dy3adxkudxtpc" path="res://ui/ui_asset/jantung_asset/j14.png" id="15_2vydm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ashrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_2vydm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_isik8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vpww4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ooqbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b2wpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vehiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1n0qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x5adf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8u21j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kld33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7qpfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wt6a7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w58an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_320bp")
+}],
+"loop": true,
+"name": &"detak",
+"speed": 30.0
+}]
+
+[node name="jantung" type="Node2D"]
+script = ExtResource("1_s5ihf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(49.862, 28.4165)
+color = Color(0, 0, 0, 1)
+
+[node name="jantung" type="AnimatedSprite2D" parent="."]
+position = Vector2(1682, 992)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_ashrk")
+animation = &"detak"
+autoplay = "detak"
+frame_progress = 0.884595
