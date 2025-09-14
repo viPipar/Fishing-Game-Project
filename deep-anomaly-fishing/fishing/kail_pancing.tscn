@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3siw6cp2pi75"]
+[gd_scene load_steps=9 format=3 uid="uid://ctisshqf1ywbo"]
 
 [ext_resource type="Script" uid="uid://dutf6wbgj3306" path="res://fishing/kail_pancing.gd" id="1_t06cb"]
 [ext_resource type="Texture2D" uid="uid://u6xajl11ygsh" path="res://fishing/fishing_asset/sprite/Idle.png" id="2_xj2du"]
