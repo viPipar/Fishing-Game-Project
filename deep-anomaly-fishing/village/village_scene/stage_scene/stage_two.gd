@@ -5,6 +5,8 @@ var resource = preload("res://dialogue/stage_2.dialogue")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$area_patung.monitoring = false
+	$quest_guide/Panel/quest_text.play("cementary")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -15,6 +17,8 @@ func _on_area_kuburan_body_shape_entered(body_rid: RID, body: Node2D, body_shape
 		$area_kuburan.queue_free()
 		$blink_kuburan.visible=false
 		DialogueManager.show_dialogue_balloon(resource,"stage_2_1")
+		await global_village.dialogue_finished
+		$quest_guide/Panel/quest_text.play("entity")
 		$blink_patung.visible=true
 		$area_patung.monitoring = true
 

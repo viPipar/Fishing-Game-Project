@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://7bse0jkjtrds"]
+[gd_scene load_steps=9 format=3 uid="uid://7bse0jkjtrds"]
 
 [ext_resource type="PackedScene" uid="uid://borfx4e7ved6t" path="res://village/village_scene/home.tscn" id="1_p0h66"]
 [ext_resource type="Script" uid="uid://bl86lien16xcv" path="res://village/village_scene/stage_scene/stage_five.gd" id="1_s2bco"]
 [ext_resource type="PackedScene" uid="uid://doybfyiltbtpj" path="res://village/village_scene/MC.tscn" id="2_s2bco"]
+[ext_resource type="PackedScene" uid="uid://dugy5nyv27fs7" path="res://ui/ui_scene/quest_guide.tscn" id="4_c6475"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0h66"]
 
@@ -75,5 +76,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_anmvp")
 }
 autoplay = "blink"
+
+[node name="quest_guide" parent="." instance=ExtResource("4_c6475")]
 
 [connection signal="body_shape_entered" from="area_kamar" to="." method="_on_area_kamar_body_shape_entered"]

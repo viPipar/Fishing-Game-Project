@@ -3,8 +3,7 @@ extends Node2D
 var resource = preload("res://dialogue/stage_5.dialogue")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	$quest_guide/Panel/quest_text.play("bed")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

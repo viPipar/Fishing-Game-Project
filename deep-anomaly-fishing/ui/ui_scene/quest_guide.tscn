@@ -1,0 +1,129 @@
+[gd_scene load_steps=14 format=3 uid="uid://dugy5nyv27fs7"]
+
+[ext_resource type="Texture2D" uid="uid://bej8am16gpll0" path="res://ui/ui_asset/panel_asset/quest_bed.png" id="1_70v23"]
+[ext_resource type="Script" uid="uid://ifa3mwpnupqf" path="res://ui/ui_script/quest_guide.gd" id="1_hsa4m"]
+[ext_resource type="Texture2D" uid="uid://drjqg4c2mvjso" path="res://ui/ui_asset/panel_asset/quest_home.png" id="1_yy83e"]
+[ext_resource type="Texture2D" uid="uid://blds817g08hnh" path="res://ui/ui_asset/panel_asset/quest_cementary.png" id="2_hsa4m"]
+[ext_resource type="Texture2D" uid="uid://cfqsaki36p8ro" path="res://ui/ui_asset/panel_asset/quest_contract.png" id="3_xh8gf"]
+[ext_resource type="Texture2D" uid="uid://bi00f4yj37y4h" path="res://ui/ui_asset/panel_asset/quest_entity.png" id="4_0iaed"]
+[ext_resource type="Texture2D" uid="uid://jir04ri4qk6m" path="res://ui/ui_asset/panel_asset/quest_harbour.png" id="5_nkpna"]
+[ext_resource type="Texture2D" uid="uid://dheh7qw1sygny" path="res://ui/ui_asset/panel_asset/quest_givemed.png" id="6_xh8gf"]
+[ext_resource type="Texture2D" uid="uid://cgxse5nk4u8dn" path="res://ui/ui_asset/panel_asset/quest_medicine.png" id="7_8kpx0"]
+[ext_resource type="Texture2D" uid="uid://cobpjks157mpu" path="res://ui/ui_asset/panel_asset/quest_outside.png" id="8_860vn"]
+[ext_resource type="Texture2D" uid="uid://d1edp3680yn3e" path="res://ui/ui_asset/panel_asset/quest_sister.png" id="9_0awvm"]
+[ext_resource type="Texture2D" uid="uid://us7ri266dmff" path="res://ui/ui_asset/panel_asset/quest_null.png" id="10_0iaed"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3t6ik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_70v23")
+}],
+"loop": true,
+"name": &"bed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hsa4m")
+}],
+"loop": true,
+"name": &"cementary",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xh8gf")
+}],
+"loop": true,
+"name": &"contract",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0iaed")
+}],
+"loop": true,
+"name": &"entity",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xh8gf")
+}],
+"loop": true,
+"name": &"givemed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nkpna")
+}],
+"loop": true,
+"name": &"harbour",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yy83e")
+}],
+"loop": true,
+"name": &"home",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8kpx0")
+}],
+"loop": true,
+"name": &"medicine",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0iaed")
+}],
+"loop": true,
+"name": &"null",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_860vn")
+}],
+"loop": true,
+"name": &"outside",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0awvm")
+}],
+"loop": true,
+"name": &"sister",
+"speed": 5.0
+}]
+
+[node name="quest_guide" type="CanvasLayer"]
+script = ExtResource("1_hsa4m")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 52.0
+scale = Vector2(10, 6)
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+modulate = Color(1, 1, 1, 0.462745)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="quest_text" type="AnimatedSprite2D" parent="Panel"]
+texture_filter = 1
+position = Vector2(19.8, 20)
+scale = Vector2(0.16, 0.266)
+sprite_frames = SubResource("SpriteFrames_3t6ik")
+animation = &"null"
