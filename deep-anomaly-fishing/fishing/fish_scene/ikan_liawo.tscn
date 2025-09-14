@@ -36,11 +36,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_26gfu"]
 radius = 20.6155
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdj6q"]
-size = Vector2(570, 134)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi2tw"]
 size = Vector2(219, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdj6q"]
+size = Vector2(570, 134)
 
 [node name="ikan_liawo" type="CharacterBody2D" groups=["Ikan"]]
 process_mode = 3
@@ -63,14 +63,14 @@ frame_progress = 0.018933
 position = Vector2(253, 30)
 shape = SubResource("CircleShape2D_26gfu")
 
+[node name="DeathArea" type="Area2D" parent="AnimatedSprite2D" groups=["Deaths"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/DeathArea"]
+position = Vector2(374.5, 18)
+shape = SubResource("RectangleShape2D_wi2tw")
+
 [node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(-35, 23)
 shape = SubResource("RectangleShape2D_vdj6q")
-
-[node name="DeathArea" type="Area2D" parent="." groups=["Deaths"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea"]
-position = Vector2(374.5, 18)
-shape = SubResource("RectangleShape2D_wi2tw")

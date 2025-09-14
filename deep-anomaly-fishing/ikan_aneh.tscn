@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://bt03qvqxku83d"]
+
+[ext_resource type="Texture2D" uid="uid://cb0hvd4kpyd7" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh.png" id="1_ex0qp"]
+[ext_resource type="Script" uid="uid://cvn5yes5onok2" path="res://ikan_aneh.gd" id="1_mkrwt"]
+[ext_resource type="Texture2D" uid="uid://bqfwc0gtpftji" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh1.png" id="2_mkrwt"]
+[ext_resource type="Texture2D" uid="uid://dxtiudvn2b46q" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh2.png" id="3_hts66"]
+[ext_resource type="Texture2D" uid="uid://6g6keh6sl6wo" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh3.png" id="4_gpfkp"]
+[ext_resource type="Texture2D" uid="uid://dr6c1587nc2nm" path="res://fishing/fishing_asset/sprite/ikan_aneh/ikan_aneh4.png" id="5_glseu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b5ji1"]
+radius = 778.081
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ecnm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ex0qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mkrwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hts66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gpfkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_glseu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j1xia"]
+radius = 292.554
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1yjt"]
+radius = 724.269
+
+[node name="ikan_aneh" type="CharacterBody2D"]
+process_mode = 3
+scale = Vector2(0.1, 0.1)
+collision_mask = 2
+script = ExtResource("1_mkrwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b5ji1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2ecnm")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.706672
+
+[node name="MouthArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(682, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/MouthArea"]
+shape = SubResource("CircleShape2D_j1xia")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+process_mode = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_x1yjt")

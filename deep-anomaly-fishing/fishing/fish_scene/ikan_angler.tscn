@@ -68,8 +68,8 @@ shape = SubResource("CircleShape2D_bhgbb")
 position = Vector2(228, 0)
 shape = SubResource("CircleShape2D_csrpr")
 
-[node name="DetectArea" type="Area2D" parent="." groups=["Ikan"]]
+[node name="DetectionArea" type="Area2D" parent="." groups=["Ikan"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(-83.5, 2.5)
 shape = SubResource("RectangleShape2D_iqwgw")
